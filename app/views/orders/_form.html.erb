@@ -1,0 +1,45 @@
+<%= form_for(@order) do |f| %>
+  <% if @order.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@order.errors.count, "error") %> prohibited this order from being saved:</h2>
+
+      <ul>
+      <% @order.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <% @lasagna.each do |las| %>
+    <div class="field">
+      <%= label_tag las.title.to_s %><br>
+      <%= text_field_tag las.title.to_s %>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%#= f.hidden_field :client_id, @cliente_id.to_i %>
+  </div>
+  <div class="field">
+    <%#= f.hidden_field :fecha_pedido, Time.now %>
+  </div>
+  <!--
+  <div class="field">
+    <%#= f.label :tipo_pago %><br>
+    <%#= f.select_tag(:tipo_pago, options_for_select(["paypal",1]))  %>
+  </div>
+  -->
+  <div class="field">
+    <%= f.label :tipo_entrega %><br>
+    <%= f.text_field :tipo_entrega %>
+  </div>
+  <div class="field">
+    <%= f.label :fecha_entrega %><br>
+    <%= f.date_select :fecha_entrega %>
+  </div>
+  
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
