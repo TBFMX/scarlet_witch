@@ -5,6 +5,36 @@ Rails.application.routes.draw do
 
   resources :orders
 
+  resources :rols
+
+  resources :password_resets
+#rutas especificas de usuarios
+  controller :users do
+    get 'recover_password' => :recover_password
+    post 'recover_password' => :recover_password
+    get 'new_recover_password' => :new_recover_password
+    post 'new_recover_password' => :new_recover_password
+    get 'cambiar_password' => :cambiar_password
+    post 'cambiar_password' => :cambiar_password
+    get 'new_cambiar_password' => :new_cambiar_password
+    post 'new_cambiar_password' => :new_cambiar_password
+  end
+#rutas especificas de session
+controller :sessions do
+    get 'login' => :new
+    post 'login' => :create
+    delete 'logout' => :destroy
+  end
+  get 'sessions/new'
+
+  get 'sessions/create'
+
+  get 'sessions/destroy'
+
+  ##ruta opcional para atrapar rutas que no son
+  get '*unmatched_route', :to => 'application#raise_not_found2'    
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

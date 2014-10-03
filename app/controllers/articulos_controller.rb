@@ -68,6 +68,12 @@ class ArticulosController < ApplicationController
   end
 
   private
+
+    def autorizar
+      unless session[:mod0] == true     
+        redirect_to root_path
+      end
+    end
     # Use callbacks to share common setup or constraints between actions.
     def set_articulo
       @articulo = Articulo.find(params[:id])

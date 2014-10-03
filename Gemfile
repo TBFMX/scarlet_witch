@@ -39,4 +39,15 @@ gem 'spring',        group: :development
 # gem 'debugger', group: [:development, :test]
 
 ##gema paypal
-gem 'paypal-sdk-rest'
+gem 'paypal-sdk-core', '~> 0.3.0', :git => 'https://github.com/paypal/sdk-core-ruby.git'
+gem 'paypal-sdk-rest', '~> 0.7.0', :git => 'https://github.com/paypal/rest-api-sdk-ruby.git'
+
+##gemas sociales
+#gem 'client_side_validations'
+gem 'omniauth-facebook', '1.4.0'
+gem 'omniauth-google-oauth2'
+gem 'omniauth-twitter'
+gem 'omniauth-identity' #esta no se explota al 100
+## gemas de apariciencia
+gem "breadcrumbs_on_rails"
+gem 'exception_notification'
