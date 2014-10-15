@@ -1,0 +1,31 @@
+<h1>Listing materials</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Unidad</th>
+      <th>Consumible</th>
+      <th>Disponibles</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @materials.each do |material| %>
+      <tr>
+        <td><%= material.nombre %></td>
+        <td><%= material.unidad %></td>
+        <td><%= material.consumible %></td>
+        <td><%= material.disponibles %></td>
+        <td><%= link_to 'Show', material %></td>
+        <td><%= link_to 'Edit', edit_material_path(material) %></td>
+        <td><%= link_to 'Destroy', material, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Material', new_material_path %>

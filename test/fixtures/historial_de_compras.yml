@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nombre_generico: MyString
+  description: MyString
+  cantidad: MyString
+  unidad: MyString
+  precio: MyString
+  multiplicador: MyString
+  category_id: 
+  origen: MyString
+
+two:
+  nombre_generico: MyString
+  description: MyString
+  cantidad: MyString
+  unidad: MyString
+  precio: MyString
+  multiplicador: MyString
+  category_id: 
+  origen: MyString

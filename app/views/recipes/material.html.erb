@@ -1,0 +1,31 @@
+
+<%= form_tag as_materiales_path do %>
+	<%=label_tag :recipe_id, "Receta:" %>
+	<%= @recipe.nombre %> </br>
+	<%= hidden_field :recipe_id, @recipe.id %>
+	<%=label_tag :mat_id, "Material:" %> </br>
+	<%= select_tag :mat_id, options_from_collection_for_select(@materiales, "id", "nombre") %></br>
+	<%=label_tag :otro, "¿agregar otro?" %>
+	<%= check_box_tag :otro %> </br>
+	<%= submit_tag "Enviar" %>
+<% end %> 
+
+<%= form_tag as_materiales_path do %>
+  
+
+  <div class="field">
+    <%=  label_tag :nombre %><br>
+    <%=  text_field_tag :nombre %>
+  </div>
+  <div class="field">
+    <%=  label_tag :unidad %><br>
+    <%=  text_field_tag :unidad %>
+  </div>
+  <div class="field">
+    <%=  label_tag :consumible %><br>
+    <%=  number_field_tag :consumible %>
+  </div>
+  <div class="actions">
+    <%=  submit_tag %>
+  </div>
+<% end %>

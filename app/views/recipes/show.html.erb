@@ -1,0 +1,17 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nombre:</strong>
+  <%= @recipe.nombre %>
+</p>
+
+<%= link_to 'agregar ingredientes' , or_ingrediente_path(@recipe)%> </br>
+<!-- aqui va lo que ya se dio de alta -->
+<%= link_to 'agregar procedimientos' , or_proceso_path(@recipe)%> </br>
+<!-- aqui va lo que ya se dio de alta -->
+<%= link_to 'agregar materials' , or_material_path(@recipe)%> </br>
+<!-- aqui va lo que ya se dio de alta -->
+
+</br>
+<%= link_to 'Edit', edit_recipe_path(@recipe) %> |
+<%= link_to 'Back', recipes_path %>

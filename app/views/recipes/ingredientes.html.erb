@@ -1,0 +1,30 @@
+
+<%= form_tag as_ingredientes_path do %>
+	<%=label_tag :recipe_id, "Receta:" %>
+	<%= @recipe.nombre %> </br>
+	<%= hidden_field :recipe_id, @recipe.nombre %>
+	<%=label_tag :ing_id, "procedimientos" %> </br>
+	<%= select_tag :ing_id, options_from_collection_for_select(@procedimientos, "id", "nombre") %></br>
+	<%=label_tag :otro, "¿agregar otro?" %>
+	<%= check_box_tag :otro %> </br>
+	<%= submit_tag "Enviar" %>
+<% end %> 
+
+<%= form_tag @ingredient do  %>
+
+  <div class="field">
+    <%=  label_tag :nombre %><br>
+    <%=  text_field_tag :nombre %>
+  </div>
+  <div class="field">
+    <%=  label_taglabel_tag :unidad %><br>
+    <%=  text_field_tag :unidad %>
+  </div>
+  <div class="field">
+    <%=  label :yield %><br>
+    <%=  text_field_tag :yield %>
+  </div>
+  <div class="actions">
+    <%=  submit_tag %>
+  </div>
+<% end %>

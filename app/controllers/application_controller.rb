@@ -4,15 +4,14 @@ class ApplicationController < ActionController::Base
     rescue_from OmniAuth::Strategies::OAuth2::CallbackError, :with =>
     :omniauth_callback_error_handler
 
-  protect_from_forgery with: :exception
-  before_action :authorize
+
   
   #aplico las traducciones
  before_action :set_locale
 #aplico el handler
   protect_from_forgery with: :exception
 #aplico las restricciones
-  before_action :authorize
+  #before_action :authorize
 
 #genera el breadcrumb con sus traducciones y agrega el elemento home.
  add_breadcrumb I18n.t("breadcrumbs.homepage"), :root_path

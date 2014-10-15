@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nombre: MyString
+  unidad: MyString
+  consumible: 1
+  disponibles: 1
+
+two:
+  nombre: MyString
+  unidad: MyString
+  consumible: 1
+  disponibles: 1

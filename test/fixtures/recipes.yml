@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nombre: MyString
+  recipe_procidure_id: 1
+  recipe_ingredient_id: 1
+  recipe_materials_id: 1
+  tiempo_preparacion: 2014-10-09 12:06:56
+
+two:
+  nombre: MyString
+  recipe_procidure_id: 1
+  recipe_ingredient_id: 1
+  recipe_materials_id: 1
+  tiempo_preparacion: 2014-10-09 12:06:56

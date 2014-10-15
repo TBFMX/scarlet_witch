@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nombre generico:</strong>
+  <%= @historial_de_compra.nombre_generico %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @historial_de_compra.description %>
+</p>
+
+<p>
+  <strong>Cantidad:</strong>
+  <%= @historial_de_compra.cantidad %>
+</p>
+
+<p>
+  <strong>Unidad:</strong>
+  <%= @historial_de_compra.unidad %>
+</p>
+
+<p>
+  <strong>Precio:</strong>
+  <%= @historial_de_compra.precio %>
+</p>
+
+<p>
+  <strong>Multiplicador:</strong>
+  <%= @historial_de_compra.multiplicador %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @historial_de_compra.category_id %>
+</p>
+
+<p>
+  <strong>Origen:</strong>
+  <%= @historial_de_compra.origen %>
+</p>
+
+<%= link_to 'Edit', edit_historial_de_compra_path(@historial_de_compra) %> |
+<%= link_to 'Back', historial_de_compras_path %>

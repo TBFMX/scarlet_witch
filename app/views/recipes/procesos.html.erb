@@ -1,0 +1,28 @@
+
+<%recipe = @recipe.id %>
+<%= form_tag as_procesos_path do %>
+	<%=label_tag :recipe_id, "Receta:" %>
+	<%= @recipe.nombre %> </br>
+	<%= hidden_field :recipe_id, recipe %>
+	<%=label_tag :pros_id, "procedimientos" %> </br>
+	<%= select_tag :pros_id, options_from_collection_for_select(@procedimientos, "id", "nombre") %></br>
+	<%=label_tag :otro, "¿agregar otro?" %>
+	<%= check_box_tag :otro %> </br>
+	<%= submit_tag "Enviar" %>
+<% end %> 
+
+Dar de alta uno nuevo y asociar
+<%= form_tag(as_procesos_path) do %>
+  <%= hidden_field "recipe_id", recipe %>
+  <div class="field">
+    <%= label_tag :nombre %><br>
+    <%= text_field_tag :nombre %>
+  </div>
+  <div class="field">
+    <%= label_tag :instrucciones %><br>
+    <%= text_area_tag :instrucciones %>
+  </div>
+  <div class="actions">
+    <%= submit_tag %>
+  </div>
+<% end %>

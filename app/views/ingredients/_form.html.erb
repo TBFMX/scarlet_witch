@@ -1,0 +1,29 @@
+<%= form_for(@ingredient) do |f| %>
+  <% if @ingredient.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@ingredient.errors.count, "error") %> prohibited this ingredient from being saved:</h2>
+
+      <ul>
+      <% @ingredient.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :nombre %><br>
+    <%= f.text_field :nombre %>
+  </div>
+  <div class="field">
+    <%= f.label :unidad %><br>
+    <%= f.text_field :unidad %>
+  </div>
+  <div class="field">
+    <%= f.label :yield %><br>
+    <%= f.text_field :yield %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

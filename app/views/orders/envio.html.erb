@@ -1,0 +1,13 @@
+<%= form_tag("/envio_c") do %>
+	
+	<!-- 
+    calle = params[:calle]
+    colonia = params[:colonia]
+    ciudad = params[:ciudad]
+    estado = params[:estado] 
+    -->
+    <%= text_field_tag "calle" %>
+    <%= text_field_tag "colonia" %>
+    <%= text_field_tag "ciudad" %>
+    <%= text_field_tag "estado" %>
+<% end %>

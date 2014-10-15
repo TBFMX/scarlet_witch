@@ -1,4 +1,24 @@
 Rails.application.routes.draw do
+  resources :materials
+
+  resources :ingredients
+
+  resources :historial_de_compras
+
+  resources :subcategories
+
+  resources :categories
+
+  resources :procedures
+
+  resources :recipes
+
+  get 'welcome/index'
+
+  get 'welcome/contact'
+
+  get 'welcome/aboutUs'
+
   resources :articulos
 
   resources :comandas
@@ -6,6 +26,8 @@ Rails.application.routes.draw do
   resources :orders
 
   resources :rols
+
+  resources :users
 
   resources :password_resets
 #rutas especificas de usuarios
@@ -30,6 +52,20 @@ controller :sessions do
   get 'sessions/create'
 
   get 'sessions/destroy'
+  controller :orders do
+    get 'pago_nuevo' => :pago_nuevo
+    post 'pago_nuevo' => :pago_nuevo
+    get 'envio_c' => :envio_c
+  end
+
+  controller :recipes do
+    get "receta/:id/agregar_proceso" => :procesos, :as => 'or_proceso'
+    get "receta/:id/agregar_material" => :material, :as => 'or_material'
+    get "receta/:id/agregar_ingrediente" => :ingrediente , :as => 'or_ingrediente'
+    post "receta/procesos" => :asignar_ingrediente, :as => 'as_ingredientes'
+    post "receta/material" => :asignar_material, :as => 'as_materiales'
+    post "receta/ingredientes" => :asignar_procesos, :as => 'as_procesos' 
+  end
 
   ##ruta opcional para atrapar rutas que no son
   get '*unmatched_route', :to => 'application#raise_not_found2'    
@@ -39,8 +75,7 @@ controller :sessions do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  # root 'welcome#index'
-
+  root 'welcome#index'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

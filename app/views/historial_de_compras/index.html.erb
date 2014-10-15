@@ -1,0 +1,39 @@
+<h1>Listing historial_de_compras</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nombre generico</th>
+      <th>Description</th>
+      <th>Cantidad</th>
+      <th>Unidad</th>
+      <th>Precio</th>
+      <th>Multiplicador</th>
+      <th>Category</th>
+      <th>Origen</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @historial_de_compras.each do |historial_de_compra| %>
+      <tr>
+        <td><%= historial_de_compra.nombre_generico %></td>
+        <td><%= historial_de_compra.description %></td>
+        <td><%= historial_de_compra.cantidad %></td>
+        <td><%= historial_de_compra.unidad %></td>
+        <td><%= historial_de_compra.precio %></td>
+        <td><%= historial_de_compra.multiplicador %></td>
+        <td><%= historial_de_compra.category_id %></td>
+        <td><%= historial_de_compra.origen %></td>
+        <td><%= link_to 'Show', historial_de_compra %></td>
+        <td><%= link_to 'Edit', edit_historial_de_compra_path(historial_de_compra) %></td>
+        <td><%= link_to 'Destroy', historial_de_compra, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Historial de compra', new_historial_de_compra_path %>

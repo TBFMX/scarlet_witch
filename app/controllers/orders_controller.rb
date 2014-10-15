@@ -1,5 +1,5 @@
 class OrdersController < ApplicationController
-  before_action :set_order, only: [:show, :edit, :update, :destroy]
+  before_action :set_order, only: [:show, :edit, :update, :destroy, :envio]
 
   # GET /orders
   # GET /orders.json
@@ -16,8 +16,29 @@ class OrdersController < ApplicationController
       @aux = Articulo.find(com.articulo_id)
       @articulos.push(@aux)
     end
-
   end
+
+  def envio
+    unless session[:user_id].blank? 
+      @user_id = session[:user_id]
+    end  
+  end
+
+  def envio_c
+    calle = params[:calle]
+    colonia = params[:colonia]
+    ciudad = params[:ciudad]
+    estado = params[:estado] 
+    respond_to do |format|
+      if @order.update(:calle => calle, :colonia => colonia, :ciudad => ciudad, :estado => estado ,:status => 1 )
+        format.html { render :pagar , notice: 'Order was successfully updated.' }
+        format.json { render :show, status: :ok, location: @order }
+      else
+        format.html { render :envio }
+        format.json { render json: @order.errors, status: :unprocessable_entity }
+      end
+    end
+  end 
 
   # GET /orders/new
   def new
@@ -73,8 +94,6 @@ class OrdersController < ApplicationController
     end
   end
 
-
-
   # DELETE /orders/1
   # DELETE /orders/1.json
   def destroy
@@ -84,13 +103,15 @@ class OrdersController < ApplicationController
       format.json { head :no_content }
     end
   end
-
-  def pago_nuevo(tarjeta, cliente,items, description)
+  def pagar
+    @cliente
+    #pago_nuevo(5579099003548246,)
+  end 
+  def pago_nuevo()
+    #tarjeta, cliente,items, description
     ##inician pagos paypal  
     require 'paypal-sdk-rest'
-    include PayPal::SDK::REST
-
-    
+    #include PayPal::SDK::REST
     # PayPal::SDK::REST.set_config(
     #   :mode => "sandbox", # "sandbox" or "live"
     #   :client_id => "EBWKjlELKMYqRNQ6sYvFo64FtaRLRR5BdHEESmha49TM",
@@ -99,67 +120,67 @@ class OrdersController < ApplicationController
     ############################
     #datos nesesarios
     #cliente
-      # payment_method (tarjeta de credito)
+       payment_method = "credit_card"
       # if tarjeta_credito
-      #   type <-tarjeta
-      #   number (deben ser 16 sin espacio) <-tarjeta
-      #   expire_month (int)(usar select)(pasar a string) <-tarjeta
-      #   expire_year (int)(usar select)(pasar a string) <-tarjeta
-      #   cvv2 (int)(3) <- tarjeta
-      #   first_name(string) <- tajeta
-      #   last_name(string) <- tajeta
+        type = "visa" #<-tarjeta
+        number =  "4417119669820331"#(deben ser 16 sin espacio) <-tarjeta
+        expire_month = "11" #(int)(usar select)(pasar a string) <-tarjeta
+        expire_year = "2018" #(int)(usar select)(pasar a string) <-tarjeta
+        cvv2 = "874" #(int)(3) <- tarjeta
+        first_name = "Joe"#(string) <- tajeta
+        last_name = "Shopper"#(string) <- tajeta
       # end 
     #   direccion
-    #     calle y numero (string) <- cliente
-    #     city (string) (posible select) <- cliente
-    #     estado (string) (posible select) <- cliente
-    #     postal_code (5)(string) <- cliente
-    #     country_code (MX)
+         calle = "52 N Main ST"  #calle y numero (string) <- cliente
+         city = "Johnstown" # (string) (posible select) <- cliente
+         estado = "OH" # (string) (posible select) <- cliente
+         postal_code = "43210" # (5)(string) <- cliente
+         country_code = "US" # (MX)
 
     #   lista de items
     #     item
-    #       nombre(title)
-    #       sku (title)
-    #       price(precio)
-    #       currency ("MXN")
-    #       quantity (cantidad)
+           nombre = "item" #(title)
+           sku = "item" #(title)
+           price = 1 #(precio)
+           currency = "USD" #("MXN")
+           quantity = 1 #(cantidad)
     #     amount
-    #       total(total)
+           total = "1.00" #(total)
     #       currency ("MXN")
-    #     description (descripcion de la orden)
+           description = "mi mensaje" #(descripcion de la orden)
     ############################
     # Build Payment object
-    @payment = Payment.new({
-      :intent => "sale",
-      :payer => {
-        :payment_method => "credit_card",
-        :funding_instruments => [{
-          :credit_card => {
-            :type => "visa",
-            :number => "4417119669820331",
-            :expire_month => "11",
-            :expire_year => "2018",
-            :cvv2 => "874",
-            :first_name => "Joe",
-            :last_name => "Shopper",
-            :billing_address => {
-              :line1 => "52 N Main ST",
-              :city => "Johnstown",
-              :state => "OH",
-              :postal_code => "43210",
-              :country_code => "MX" }}}]},
-      :transactions => [{
-        :item_list => {
-          :items => [{
-            :name => "item",
-            :sku => "item",
-            :price => "1",
-            :currency => "USD",
-            :quantity => 1 }]},
-        :amount => {
-          :total => "1.00",
-          :currency => "USD" },
-        :description => "This is the payment transaction description." }]})
+    @payment = PayPal::SDK::REST::Payment.new({
+    :intent => "sale",
+    :payer => {
+      :payment_method => "credit_card",
+      :funding_instruments => [{
+        :credit_card => {
+          :type => type.to_s,
+          :number => number.to_s,
+          :expire_month => expire_month.to_s,
+          :expire_year => expire_year.to_s,
+          :cvv2 => cvv2.to_s,
+          :first_name => first_name.to_s,
+          :last_name => last_name.to_s,
+          :billing_address => {
+            :line1 => calle.to_s,
+            :city => city.to_s,
+            :state => estado.to_s,
+            :postal_code => postal_code.to_s,
+            :country_code => country_code.to_s }}}]},
+    :transactions => [{
+      :item_list => {
+        :items => [{
+          :name => nombre.to_s,
+          :sku => sku.to_s,
+          :price => price.to_s,
+          :currency => currency.to_s,
+          :quantity => quantity.to_i }]},
+      :amount => {
+        :total => total.to_s,
+        :currency => currency.to_s },
+      :description => "This is the payment transaction description." }]})
 
     # Create Payment and return the status(true or false)
     if @payment.create
@@ -169,9 +190,6 @@ class OrdersController < ApplicationController
     end
     ##terminan paypal
   end
-
-
-
 
   private
     # Use callbacks to share common setup or constraints between actions.
