@@ -41,21 +41,21 @@ end
 ##############################ARTICULOS#############################
 if Articulo.count <= 0
 	Articulo.create(title: 'vegetariana', tiempo_preparacion: '4 hrs', tipo: 1, descripcion: 'una lasagna mas')
-	Articulo.create(title: 'vegetariana2', tiempo_preparacion: '4 hrs', tipo: 1, descripcion: 'una lasagna mas')
-	Articulo.create(title: 'vegetariana3', tiempo_preparacion: '4 hrs', tipo: 1, descripcion: 'una lasagna mas')
-	Articulo.create(title: 'vegetariana4', tiempo_preparacion: '4 hrs', tipo: 1, descripcion: 'una lasagna mas')
+	Articulo.create(title: 'Carne de Res', tiempo_preparacion: '4 hrs', tipo: 1, descripcion: 'una lasagna mas')
+	Articulo.create(title: 'Salmon', tiempo_preparacion: '4 hrs', tipo: 1, descripcion: 'una lasagna mas')
+	Articulo.create(title: 'Receta Secreta', tiempo_preparacion: '4 hrs', tipo: 1, descripcion: 'una lasagna mas')
 
 	###ensaladas
-	Articulo.create(title: 'ensaladas', tiempo_preparacion: '4 hrs', tipo: 2, descripcion: 'una ensalada mas')
-	Articulo.create(title: 'ensaladas2', tiempo_preparacion: '4 hrs', tipo: 2, descripcion: 'una ensalada mas')
-	Articulo.create(title: 'ensaladas3', tiempo_preparacion: '4 hrs', tipo: 2, descripcion: 'una ensalada mas')
-	Articulo.create(title: 'ensaladas4', tiempo_preparacion: '4 hrs', tipo: 2, descripcion: 'una ensalada mas')
+	Articulo.create(title: 'Cesar', tiempo_preparacion: '4 hrs', tipo: 2, descripcion: 'una ensalada mas')
+	Articulo.create(title: 'York', tiempo_preparacion: '4 hrs', tipo: 2, descripcion: 'una ensalada mas')
+	Articulo.create(title: 'Pura Lechuga', tiempo_preparacion: '4 hrs', tipo: 2, descripcion: 'una ensalada mas')
+	Articulo.create(title: 'TBF con champiñones', tiempo_preparacion: '4 hrs', tipo: 2, descripcion: 'una ensalada mas')
 
 	###aderezos
-	Articulo.create(title: 'aderezos', tiempo_preparacion: '4 hrs', tipo: 3, descripcion: 'una aderezo mas')
-	Articulo.create(title: 'aderezos2', tiempo_preparacion: '4 hrs', tipo: 3, descripcion: 'una aderezo mas')
-	Articulo.create(title: 'aderezos3', tiempo_preparacion: '4 hrs', tipo: 3, descripcion: 'una aderezo mas')
-	Articulo.create(title: 'aderezos4', tiempo_preparacion: '4 hrs', tipo: 3, descripcion: 'una aderezo mas')
+	Articulo.create(title: 'Mayonesa', tiempo_preparacion: '4 hrs', tipo: 3, descripcion: 'una aderezo mas')
+	Articulo.create(title: 'Green Mayo', tiempo_preparacion: '4 hrs', tipo: 3, descripcion: 'una aderezo mas')
+	Articulo.create(title: 'Cesar', tiempo_preparacion: '4 hrs', tipo: 3, descripcion: 'una aderezo mas')
+	Articulo.create(title: 'Ranch', tiempo_preparacion: '4 hrs', tipo: 3, descripcion: 'una aderezo mas')
 end
 ######################################################################
 

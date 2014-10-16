@@ -1,45 +1,98 @@
-<%= form_for(@order) do |f| %>
-  <% if @order.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@order.errors.count, "error") %> prohibited this order from being saved:</h2>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  $("#hide_lasagna").click(function(){
+    $("#lasagna").hide();
+  });
+  $("#show_lasagna").click(function(){
+    $("#lasagna").show();
+  });
+  $("#hide_ensalada").click(function(){
+    $("#ensalada").hide();
+  });
+  $("#show_ensalada").click(function(){
+    $("#ensalada").show();
+  });
+  $("#hide_aderezo").click(function(){
+    $("#aderezo").hide();
+  });
+  $("#show_aderezo").click(function(){
+    $("#aderezo").show();
+  });
 
-      <ul>
-      <% @order.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+
+
+});
+</script>
+
+  <%= form_for(@order) do |f| %>
+    <% if @order.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@order.errors.count, "error") %> prohibited this order from being saved:</h2>
+
+        <ul>
+        <% @order.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+    <p>Lasagnas </p><img id="hide_lasagna" src="../../images/less.jpg">
+    <img id="show_lasagna" src="../../images/plus-icon.png">
+    <div id ="lasagna"> 
+      <% @lasagna.each do |las| %>
+        <div class="field">
+          <%= label_tag las.title.to_s + ":  " %><%= number_field_tag las.title.to_s ,"", maxlength: 2, class: "articulos" %>
+          <img src="../../images/roto.jpg" class="articulos_img"  >
+        </div>
       <% end %>
-      </ul>
     </div>
-  <% end %>
-
-  <% @lasagna.each do |las| %>
+    <p>Ensaladas </p>
+    <img id="hide_ensalada" src="../../images/less.jpg">
+    <img id="show_ensalada" src="../../images/plus-icon.png">
+    <div id ="ensalada"> 
+      <% @ensalada.each do |ens| %>
+        <div class="field">
+          <%= label_tag ens.title.to_s + ":  " %><%= number_field_tag ens.title.to_s ,"", maxlength: 2, class: "articulos"%>
+          <img src="../../images/roto.jpg" class="articulos_img"  >
+        </div>
+      <% end %>
+    </div>
+    <p>Aderezos</p>
+    <img id="hide_aderezo" src="../../images/less.jpg">
+    <img id="show_aderezo" src="../../images/plus-icon.png">
+    <div id ="aderezo"> 
+      <% @aderezo.each do |adec| %>
+        <div class="field">
+          <%= label_tag adec.title.to_s + ":  " %><%= number_field_tag adec.title.to_s ,"", maxlength: 2, class: "articulos"%>
+          <img src="../../images/roto.jpg" class="articulos_img"  >
+        </div>
+      <% end %>
+    </div>
     <div class="field">
-      <%= label_tag las.title.to_s %><br>
-      <%= text_field_tag las.title.to_s %>
+      <%#= f.hidden_field :client_id, @cliente_id.to_i %>
+    </div>
+    <!--
+    <div class="field">
+      <%#= f.hidden_field :fecha_pedido, Time.now %>
+    </div>
+    -->
+    <!--
+    <div class="field">
+      <%#= f.label :tipo_pago %><br>
+      <%#= f.select_tag(:tipo_pago, options_for_select(["paypal",1]))  %>
+    </div>
+    -->
+    <div class="field">
+      <%= f.label :tipo_entrega %><br>
+      <%= f.select(:tipo_entrega, [["Entrega","Entrega"],["Recoger","Recoger"]]) %>
+    </div>
+    <div class="field">
+      <%= f.label :fecha_entrega %><br>
+      <%= f.date_select :fecha_entrega %>
+    </div>
+    
+    <div class="actions">
+      <%= f.submit %>
     </div>
   <% end %>
-
-  <div class="field">
-    <%#= f.hidden_field :client_id, @cliente_id.to_i %>
-  </div>
-  <div class="field">
-    <%#= f.hidden_field :fecha_pedido, Time.now %>
-  </div>
-  <!--
-  <div class="field">
-    <%#= f.label :tipo_pago %><br>
-    <%#= f.select_tag(:tipo_pago, options_for_select(["paypal",1]))  %>
-  </div>
-  -->
-  <div class="field">
-    <%= f.label :tipo_entrega %><br>
-    <%= f.text_field :tipo_entrega %>
-  </div>
-  <div class="field">
-    <%= f.label :fecha_entrega %><br>
-    <%= f.date_select :fecha_entrega %>
-  </div>
-  
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>

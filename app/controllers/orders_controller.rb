@@ -57,13 +57,15 @@ class OrdersController < ApplicationController
   # POST /orders
   # POST /orders.json
   def create
-    @lasagna = Articulo.where("tipo = 1")
+    #@lasagna = Articulo.where("tipo = 1")
+    @articulo = Articulo.all
+    params[:fecha_pedido] = Time.now
     @order = Order.new(order_params)
     respond_to do |format|
       if @order.save
         format.html { 
           ##insertamos las comandas
-          @lasagna.each do |las|
+          @articulo.each do |las|
             unless params[las.title.to_s].blank?
               if params[las.title.to_s].to_i >= 0
                 Comanda.create(articulo_id: las.id.to_i, order_id: @order.id)
