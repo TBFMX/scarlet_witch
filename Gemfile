@@ -51,3 +51,10 @@ gem 'omniauth-identity' #esta no se explota al 100
 ## gemas de apariciencia
 gem "breadcrumbs_on_rails"
 gem 'exception_notification'
+
+group :development do
+	gem "sqlite3"
+end
+group :production do
+	gem "pg"
+end
