@@ -9,10 +9,10 @@ class ApplicationController < ActionController::Base
 
   
   #aplico las traducciones
- before_action :set_locale
-#aplico el handler
+  before_action :set_locale
+  #aplico el handler
   protect_from_forgery with: :exception
-#aplico las restricciones
+  #aplico las restricciones
   #before_action :authorize
 
 #genera el breadcrumb con sus traducciones y agrega el elemento home.

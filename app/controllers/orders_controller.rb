@@ -82,6 +82,36 @@ class OrdersController < ApplicationController
     end
   end
 
+  def programar
+
+  end
+
+  def agregar_programa
+    @articulo = Articulo.all
+    #params[:fecha_pedido] = 
+    @order = Order.new(order_params)
+    respond_to do |format|
+      if @order.save
+        format.html { 
+          ##insertamos las comandas
+          @articulo.each do |las|
+            unless params[las.title.to_s].blank?
+              if params[las.title.to_s].to_i >= 0
+                Comanda.create(articulo_id: las.id.to_i, order_id: @order.id)
+              end 
+            end   
+          end     
+          redirect_to @order, notice: 'Su orden a sido procesada'
+        }
+        format.json { render :show, status: :created, location: @order }
+      else
+        format.html { render :new }
+        format.json { render json: @order.errors, status: :unprocessable_entity }
+      end
+    end
+
+  end  
+
   # PATCH/PUT /orders/1
   # PATCH/PUT /orders/1.json
   def update
