@@ -36,11 +36,13 @@ $(document).ready(function(){
         </ul>
       </div>
     <% end %>
+
     <div class="cintilla_pedidos">
       <h2>Lasagnas</h2>
-        <img id="hide_lasagna" src="../../images/less.jpg">
-        <img id="show_lasagna" src="../../images/plus-icon.png">
+      <img id="show_lasagna" src="../../images/plus-icon.png">
+      <img id="hide_lasagna" src="../../images/less.jpg">
     </div>
+
     <div id="lasagna"> 
       <% @lasagna.each do |las| %>
         <div class="field">
@@ -49,9 +51,13 @@ $(document).ready(function(){
         </div>
       <% end %>
     </div>
-    <p>Ensaladas </p>
-    <img id="hide_ensalada" src="../../images/less.jpg">
-    <img id="show_ensalada" src="../../images/plus-icon.png">
+
+    <div class="cintilla_pedidos">
+      <h2>Ensaladas </h2>
+      <img id="show_ensalada" src="../../images/plus-icon.png">      
+      <img id="hide_ensalada" src="../../images/less.jpg">
+    </div>
+
     <div id ="ensalada"> 
       <% @ensalada.each do |ens| %>
         <div class="field">
@@ -60,9 +66,13 @@ $(document).ready(function(){
         </div>
       <% end %>
     </div>
-    <p>Aderezos</p>
-    <img id="hide_aderezo" src="../../images/less.jpg">
-    <img id="show_aderezo" src="../../images/plus-icon.png">
+
+    <div class="cintilla_pedidos">
+      <h2>Aderezos</h2>
+      <img id="show_aderezo" src="../../images/plus-icon.png"> 
+      <img id="hide_aderezo" src="../../images/less.jpg">
+    </div>
+    
     <div id ="aderezo"> 
       <% @aderezo.each do |adec| %>
         <div class="field">

@@ -5,17 +5,18 @@
 //estilo botones caja mostrar
 .cintilla_pedidos{
 	min-width: 500px;
-	max-width: 880px;
-	font-size: 30px;
+	max-width: 950px;
 	height: 30px;
 	background-color: #b3b3b3; 
-	padding: 10px;
+	padding: 5px;
 	text-align: left;
-	margin: 0px;
+	margin: 10px auto 10px auto;
 }
 
-.cintilla_pedidos h2{
-	float: left;
+.cintilla_pedidos img{
+    float: right;
+    margin: -24px 0 10px 0;
+    padding: 5px;
 }
 
 //estilo de las cajas de texto en el formulario de orden
