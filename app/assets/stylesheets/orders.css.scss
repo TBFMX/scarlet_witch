@@ -4,7 +4,7 @@
 
 //estilo botones caja mostrar
 .cintilla_pedidos{
-	min-width: 500px;
+	min-width: 490px;
 	max-width: 950px;
 	height: 30px;
 	background-color: #b3b3b3; 
@@ -17,6 +17,37 @@
     float: right;
     margin: -24px 0 10px 0;
     padding: 5px;
+}
+
+.mostrar_articulos{
+	min-width: 480px;
+	max-width: 880px;
+	height: 140px;
+	padding: 10px;
+	margin: 0 auto 0 auto;
+}
+
+.mostrar_articulos img{
+	width: 140px;
+	height: 140px;
+}
+
+.mostrar_articulos h3{  
+	margin: -140px 160px;
+	text-transform: capitalize;
+}
+
+.mostrar_articulos .cantidad{
+	width: 138px;
+	height: 138px;
+	border: 1px solid #b3b3b3;
+	float: right;
+	margin-top: 110px;
+	text-align: center;
+}
+
+.mostrar_articulos .cantidad input{
+	margin: 0 auto 0 auto;
 }
 
 //estilo de las cajas de texto en el formulario de orden

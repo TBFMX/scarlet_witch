@@ -45,9 +45,13 @@ $(document).ready(function(){
 
     <div id="lasagna"> 
       <% @lasagna.each do |las| %>
-        <div class="field">
-          <%= label_tag las.title.to_s + ":  " %><%= number_field_tag las.title.to_s ,"", maxlength: 2, class: "articulos" %>
-          <img src="../../images/lasagna-001.jpg" class="articulos_img"  >
+        <div class="mostrar_articulos">
+        <img src="../../images/lasagna-001.jpg" class="articulos_img"  >
+        <h3><%=  las.title.to_s + ":" %></h3>
+        <div class="cantidad">
+          <h4>Cantidad:</h4>
+          <%= number_field_tag las.title.to_s ,"", maxlength: 2, class: "articulos" %>
+        </div> 
         </div>
       <% end %>
     </div>
@@ -60,9 +64,9 @@ $(document).ready(function(){
 
     <div id ="ensalada"> 
       <% @ensalada.each do |ens| %>
-        <div class="field">
-          <%= label_tag ens.title.to_s + ":  " %><%= number_field_tag ens.title.to_s ,"", maxlength: 2, class: "articulos"%>
-          <img src="../../images/lasagna-002.jpg" class="articulos_img"  >
+        <div class="mostrar_articulos">
+        <img src="../../images/lasagna-002.jpg" class="articulos_img"  >
+        <%= label_tag ens.title.to_s + ":  " %><%= number_field_tag ens.title.to_s ,"", maxlength: 2, class: "articulos"%>  
         </div>
       <% end %>
     </div>
@@ -72,12 +76,12 @@ $(document).ready(function(){
       <img id="show_aderezo" src="../../images/plus-icon.png"> 
       <img id="hide_aderezo" src="../../images/less.jpg">
     </div>
-    
+
     <div id ="aderezo"> 
       <% @aderezo.each do |adec| %>
-        <div class="field">
-          <%= label_tag adec.title.to_s + ":  " %><%= number_field_tag adec.title.to_s ,"", maxlength: 2, class: "articulos"%>
+        <div class="mostrar_articulos">
           <img src="../../images/lasagna-003.jpg" class="articulos_img"  >
+          <%= label_tag adec.title.to_s + ":  " %><%= number_field_tag adec.title.to_s ,"", maxlength: 2, class: "articulos"%>
         </div>
       <% end %>
     </div>
