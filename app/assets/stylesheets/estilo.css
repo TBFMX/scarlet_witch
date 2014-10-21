@@ -24,3 +24,8 @@ table{	width: 90%;
 
 thead{	background-color: #a3a3a3;
 		color:#fff; }
+
+.sombreado{
+  -webkit-box-shadow: 2px 2px 5px #999;
+  -moz-box-shadow: 2px 2px 5px #999;
+}
