@@ -1,0 +1,13 @@
+body{background-color: #ff0000;}
+
+.contenedor_principal{
+	min-width: 500px;
+	max-width: 1024px;
+	border:1px solid #000;
+	margin: 0 auto 0 auto;
+}
+
+
+h1{ padding: 5px; font-size: 30px; }
+h2{ padding: 5px;font-size: 30px;}
+h3{ font-size: 20px; }
