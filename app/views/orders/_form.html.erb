@@ -18,8 +18,13 @@ $(document).ready(function(){
   });
   $("#show_aderezo").click(function(){
     $("#aderezo").show();
-
   });
+  $("#show_total").click(function(){
+    $("#total").show();
+  });
+  $("#hide_total").click(function(){
+    $("#total").hide();
+  });    
 });
 
 </script>
@@ -46,7 +51,7 @@ $(document).ready(function(){
     <div id="lasagna"> 
       <% @lasagna.each do |las| %>
         <div class="mostrar_articulos">
-        <img src="../../images/lasagna-001.jpg" class="articulos_img"  >
+        <img src="../../images/lasagna-001.jpg">
         <h3><%=  las.title.to_s + ":" %></h3>
         <div class="cantidad">
           <h4>Cantidad:</h4>
@@ -65,8 +70,12 @@ $(document).ready(function(){
     <div id ="ensalada"> 
       <% @ensalada.each do |ens| %>
         <div class="mostrar_articulos">
-        <img src="../../images/lasagna-002.jpg" class="articulos_img"  >
-        <%= label_tag ens.title.to_s + ":  " %><%= number_field_tag ens.title.to_s ,"", maxlength: 2, class: "articulos"%>  
+        <img src="../../images/lasagna-002.jpg">
+        <h3><%=  ens.title.to_s + ":" %></h3>
+        <div class="cantidad">
+          <h4>Cantidad:</h4>
+          <%= number_field_tag ens.title.to_s ,"", maxlength: 2, class: "articulos" %>
+        </div> 
         </div>
       <% end %>
     </div>
@@ -80,8 +89,12 @@ $(document).ready(function(){
     <div id ="aderezo"> 
       <% @aderezo.each do |adec| %>
         <div class="mostrar_articulos">
-          <img src="../../images/lasagna-003.jpg" class="articulos_img"  >
-          <%= label_tag adec.title.to_s + ":  " %><%= number_field_tag adec.title.to_s ,"", maxlength: 2, class: "articulos"%>
+        <img src="../../images/lasagna-003.jpg">
+        <h3><%=  adec.title.to_s + ":" %></h3>
+        <div class="cantidad">
+          <h4>Cantidad:</h4>
+          <%= number_field_tag adec.title.to_s ,"", maxlength: 2, class: "articulos" %>
+        </div> 
         </div>
       <% end %>
     </div>
@@ -99,16 +112,28 @@ $(document).ready(function(){
       <%#= f.select_tag(:tipo_pago, options_for_select(["paypal",1]))  %>
     </div>
     -->
-    <div class="field">
-      <%= f.label :tipo_entrega %><br>
-      <%= f.select(:tipo_entrega, [["Entrega","Entrega"],["Recoger","Recoger"]]) %>
+
+    <div class="cintilla_pedidos">
+      <h2>Finalizar Pedido</h2>
+      <img id="show_total" src="../../images/plus-icon.png"> 
+      <img id="hide_total" src="../../images/less.jpg">
     </div>
-    <div class="field">
-      <%= f.label :fecha_entrega %><br>
-      <%= f.date_select :fecha_entrega %>
-    </div>
-    
-    <div class="actions">
-      <%= f.submit %>
-    </div>
+
+    <div id ="total">
+      <div class="mostrar_total"> 
+        <div class="field">
+          <%= f.label :tipo_entrega %><br>
+          <%= f.select(:tipo_entrega, [["Entrega","Entrega"],["Recoger","Recoger"]]) %>
+        </div>
+        <div class="field">
+          <%= f.label :fecha_entrega %><br>
+          <%= f.date_select :fecha_entrega %>
+        </div>
+        
+        <div class="actions">
+          <%= f.submit "Ordenar" %>
+        </div>
+      </div>    
+    </div> 
+
   <% end %>
