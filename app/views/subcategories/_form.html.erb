@@ -1,4 +1,5 @@
-<%= form_for(@subcategory) do |f| %>
+<div class="formulario_admin sombreado">
+  <%= form_for(@subcategory) do |f| %>
   <% if @subcategory.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@subcategory.errors.count, "error") %> prohibited this subcategory from being saved:</h2>
@@ -11,11 +12,14 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :description %><br>
-    <%= f.text_field :description %>
+  <div class="cintilla_formularios">
+    <h2>Subcategorias</h2>
   </div>
+
+  <p><%= f.label :description %>
+  <%= f.text_field :description %></p>
   <div class="actions">
     <%= f.submit %>
   </div>
-<% end %>
+  <% end %>
+</div>

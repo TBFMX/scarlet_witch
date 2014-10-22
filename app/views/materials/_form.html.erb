@@ -1,33 +1,36 @@
-<%= form_for(@material) do |f| %>
-  <% if @material.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@material.errors.count, "error") %> prohibited this material from being saved:</h2>
+<div class="formulario_admin sombreado">
+  <%= form_for(@material) do |f| %>
+    <% if @material.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@material.errors.count, "error") %> prohibited this material from being saved:</h2>
 
-      <ul>
-      <% @material.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+        <ul>
+        <% @material.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+      <div class="cintilla_formularios">
+        <h2>Crear Materiales</h2>
+      </div>
+
+
+      <p><%= f.label :nombre %>
+      <%= f.text_field :nombre %></p>
+
+      <p><%= f.label :unidad %>
+      <%= f.text_field :unidad %></p>
+
+      <p><%= f.label :consumible %>
+      <%= f.number_field :consumible %></p>
+
+      <p><%= f.label :disponibles %>
+      <%= f.number_field :disponibles %></p>
+
+    <div class="actions">
+      <%= f.submit %>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= f.label :nombre %><br>
-    <%= f.text_field :nombre %>
-  </div>
-  <div class="field">
-    <%= f.label :unidad %><br>
-    <%= f.text_field :unidad %>
-  </div>
-  <div class="field">
-    <%= f.label :consumible %><br>
-    <%= f.number_field :consumible %>
-  </div>
-  <div class="field">
-    <%= f.label :disponibles %><br>
-    <%= f.number_field :disponibles %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+</div>  
