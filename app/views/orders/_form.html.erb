@@ -1,6 +1,11 @@
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <script>
 $(document).ready(function(){
+
+  $("#lasagna").show();
+  $("#ensalada").hide();
+  $("#aderezo").hide();
+
   $("#hide_lasagna").click(function(){
     $("#lasagna").hide();
   });
@@ -27,6 +32,10 @@ $(document).ready(function(){
   });    
 });
 
+  $(function() {
+    $( "#datepicker" ).datepicker();
+  });
+
 </script>
 
   <%= form_for(@order) do |f| %>
@@ -51,18 +60,25 @@ $(document).ready(function(){
     <div id="lasagna"> 
       <% @lasagna.each do |las| %>
         <div class="mostrar_articulos">
-        <img src="../../images/lasagna-001.jpg">
-        <h3><%=  las.title.to_s + ":" %></h3>
-        <div class="cantidad">
-          <h4>Cantidad:</h4>
-          <%= number_field_tag las.title.to_s ,"", maxlength: 2, class: "articulos" %>
-        </div> 
+          
+          <div class="imagen">
+            <img src="../../images/lasagna-001.jpg">
+          </div>
+
+          <div class="descripcion">
+            <h3><%=  las.title.to_s + ":" %></h3>
+          </div>
+        
+          <div class="cantidad">
+            <h4>Cantidad:</h4>
+            <%= number_field_tag las.title.to_s ,"", maxlength: 2, class: "articulos" %>
+          </div> 
         </div>
       <% end %>
     </div>
 
     <div class="cintilla_pedidos">
-      <h2>Ensaladas </h2>
+      <h2>Agregar Ensaladas </h2>
       <img id="show_ensalada" src="../../images/plus-icon.png">      
       <img id="hide_ensalada" src="../../images/less.jpg">
     </div>
@@ -70,8 +86,14 @@ $(document).ready(function(){
     <div id ="ensalada"> 
       <% @ensalada.each do |ens| %>
         <div class="mostrar_articulos">
-        <img src="../../images/lasagna-002.jpg">
-        <h3><%=  ens.title.to_s + ":" %></h3>
+          <div class="imagen">
+            <img src="../../images/lasagna-002.jpg">
+          </div>
+
+        <div class="descripcion">
+            <h3><%=  ens.title.to_s + ":" %></h3>
+        </div>
+        
         <div class="cantidad">
           <h4>Cantidad:</h4>
           <%= number_field_tag ens.title.to_s ,"", maxlength: 2, class: "articulos" %>
@@ -81,7 +103,7 @@ $(document).ready(function(){
     </div>
 
     <div class="cintilla_pedidos">
-      <h2>Aderezos</h2>
+      <h2>Agregar Aderezos</h2>
       <img id="show_aderezo" src="../../images/plus-icon.png"> 
       <img id="hide_aderezo" src="../../images/less.jpg">
     </div>
@@ -89,8 +111,15 @@ $(document).ready(function(){
     <div id ="aderezo"> 
       <% @aderezo.each do |adec| %>
         <div class="mostrar_articulos">
-        <img src="../../images/lasagna-003.jpg">
-        <h3><%=  adec.title.to_s + ":" %></h3>
+
+          <div class="imagen">
+            <img src="../../images/lasagna-003.jpg">
+          </div>
+
+          <div class="descripcion">
+            <h3><%=  adec.title.to_s + ":" %></h3>
+          </div>          
+        
         <div class="cantidad">
           <h4>Cantidad:</h4>
           <%= number_field_tag adec.title.to_s ,"", maxlength: 2, class: "articulos" %>
@@ -127,7 +156,7 @@ $(document).ready(function(){
         </div>
         <div class="field">
           <%= f.label :fecha_entrega %><br>
-          <%= f.date_select :fecha_entrega %>
+          <%= f.text_field :fecha_entrega, id: "datepicker" %>
         </div>
         
         <div class="actions">
