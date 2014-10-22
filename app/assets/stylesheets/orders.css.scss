@@ -99,3 +99,30 @@
 	font-size: 15px;
 	text-transform: capitalize;
 }
+
+//formulario de pago
+.formulario_pago{
+	width: 340px;
+	height: 400px;
+	margin: 20px auto 20px auto;
+	padding: 10px;
+	border: 1px solid #A3A3A3;
+	text-transform: capitalize;
+}
+
+.formulario_pago p{
+	font-size: 15px;
+}
+
+.formulario_pago input,
+.formulario_pago select{
+	padding: 5px;
+}
+
+.cintilla_ticket_pago{
+	width: 350px;
+	height: 25px;
+	background-color: #b3b3b3;
+	margin: 0 -10px;
+	text-align: center;
+}
