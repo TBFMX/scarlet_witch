@@ -53,7 +53,7 @@ class OrdersController < ApplicationController
               end 
             end   
           end     
-          redirect_to enviar_path(:order_id => @order), notice: 'Su orden a sido procesada'
+          redirect_to enviar_path(:id => @order), notice: 'Su orden a sido procesada'
         }
         format.json { render :show, status: :created, location: @order }
       else
@@ -66,11 +66,7 @@ class OrdersController < ApplicationController
   def envio
     unless session[:user_id].blank? 
       @user_id = session[:user_id]
-      unless params[:order_id].blank?
-        @order_id = params[:order_id]
-      else
-        redirect_to new_order_path
-      end
+      
     else
       redirect_to login_path
     end  
