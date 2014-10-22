@@ -1,5 +1,6 @@
 class OrdersController < ApplicationController
   before_action :set_order, only: [:show, :edit, :update, :destroy, :envio]
+  skip_before_action :authorize, only: [:show, :new,:edit, :update, :destroy, :programar, :agregar_programa, :envio]
 
   # GET /orders
   # GET /orders.json
@@ -18,27 +19,7 @@ class OrdersController < ApplicationController
     end
   end
 
-  def envio
-    unless session[:user_id].blank? 
-      @user_id = session[:user_id]
-    end  
-  end
-
-  def envio_c
-    calle = params[:calle]
-    colonia = params[:colonia]
-    ciudad = params[:ciudad]
-    estado = params[:estado] 
-    respond_to do |format|
-      if @order.update(:calle => calle, :colonia => colonia, :ciudad => ciudad, :estado => estado ,:status => 1 )
-        format.html { render :pagar , notice: 'Order was successfully updated.' }
-        format.json { render :show, status: :ok, location: @order }
-      else
-        format.html { render :envio }
-        format.json { render json: @order.errors, status: :unprocessable_entity }
-      end
-    end
-  end 
+   
 
   # GET /orders/new
   def new
@@ -72,11 +53,40 @@ class OrdersController < ApplicationController
               end 
             end   
           end     
-          redirect_to pagar_path, notice: 'Su orden a sido procesada'
+          redirect_to enviar_path(:order_id => @order), notice: 'Su orden a sido procesada'
         }
         format.json { render :show, status: :created, location: @order }
       else
         format.html { render :new }
+        format.json { render json: @order.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  def envio
+    unless session[:user_id].blank? 
+      @user_id = session[:user_id]
+      unless params[:order_id].blank?
+        @order_id = params[:order_id]
+      else
+        redirect_to new_order_path
+      end
+    else
+      redirect_to login_path
+    end  
+  end
+
+  def envio_c
+    calle = params[:calle]
+    colonia = params[:colonia]
+    ciudad = params[:ciudad]
+    estado = params[:estado] 
+    respond_to do |format|
+      if @order.update(:calle => calle, :colonia => colonia, :ciudad => ciudad, :estado => estado ,:status => 1 )
+        format.html { render :pagar , notice: 'Order was successfully updated.' }
+        format.json { render :show, status: :ok, location: @order }
+      else
+        format.html { render :envio }
         format.json { render json: @order.errors, status: :unprocessable_entity }
       end
     end
@@ -114,7 +124,6 @@ class OrdersController < ApplicationController
         format.json { render json: @order.errors, status: :unprocessable_entity }
       end
     end
-
   end  
 
   # PATCH/PUT /orders/1

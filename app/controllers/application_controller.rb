@@ -13,10 +13,10 @@ class ApplicationController < ActionController::Base
   #aplico el handler
   protect_from_forgery with: :exception
   #aplico las restricciones
-  #before_action :authorize
+  before_action :authorize
 
-#genera el breadcrumb con sus traducciones y agrega el elemento home.
- add_breadcrumb I18n.t("breadcrumbs.homepage"), :root_path
+
+###### empieza Vulcano
  
   unless Rails.application.config.consider_all_requests_local
     rescue_from Exception, :with => :render_error
@@ -106,12 +106,14 @@ class ApplicationController < ActionController::Base
   def set_locale
     I18n.locale = :es || I18n.default_locale
   end
+###### termina Vulcano
+
 
   protected
   	def authorize
   		unless User.find_by(id: session[:user_id])
   			session[:lasurl]= request.original_url
-  			redirect_to root_path, notice: "Please log in"
+  			redirect_to login_path, notice: "Please log in"
   		end
  
   	end
