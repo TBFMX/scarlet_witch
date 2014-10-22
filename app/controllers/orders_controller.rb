@@ -72,7 +72,7 @@ class OrdersController < ApplicationController
               end 
             end   
           end     
-          redirect_to @order, notice: 'Su orden a sido procesada'
+          redirect_to pagar_path, notice: 'Su orden a sido procesada'
         }
         format.json { render :show, status: :created, location: @order }
       else

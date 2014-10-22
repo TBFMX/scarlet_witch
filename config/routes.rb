@@ -53,6 +53,7 @@ controller :sessions do
 
   get 'sessions/destroy'
   controller :orders do
+    get 'pagar' => :pagar , :as => 'pagar'
     get 'pago_nuevo' => :pago_nuevo
     post 'pago_nuevo' => :pago_nuevo
     get 'envio_c' => :envio_c
