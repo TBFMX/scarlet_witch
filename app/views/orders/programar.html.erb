@@ -1,6 +1,13 @@
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js">
+</script>
+
 <script>
 $(document).ready(function(){
+
+  $("#lasagna").hide();
+  $("#ensalada").hide();
+  $("#aderezo").hide();
+
   $("#hide_lasagna").click(function(){
     $("#lasagna").hide();
   });
@@ -26,6 +33,10 @@ $(document).ready(function(){
     $("#total").hide();
   });    
 });
+
+  $(function() {
+    $( "#datepicker" ).datepicker();
+  });
 
 </script>
 
@@ -127,12 +138,8 @@ $(document).ready(function(){
         </div>
         <div class="field">
           <%= f.label :fecha_entrega %><br>
-          <%= f.date_select :fecha_entrega %>
-        </div>
-        <!--<div class="field">-->
-          <%#= f.date_select :fecha_pedido, Time.now %> 
-          <!-- cambiar por calendario de ser posible -->
-       <!--</div>       -->     
+          <%= f.text_field :fecha_entrega, id: "datepicker" %>
+        </div> 
         <div class="actions">
           <%= f.submit "Ordenar" %>
         </div>

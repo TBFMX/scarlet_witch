@@ -1,49 +1,47 @@
-<%= form_for(@historial_de_compra) do |f| %>
-  <% if @historial_de_compra.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@historial_de_compra.errors.count, "error") %> prohibited this historial_de_compra from being saved:</h2>
+<div class="formulario_admin sombreado">
+  <%= form_for(@historial_de_compra) do |f| %>
+    <% if @historial_de_compra.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@historial_de_compra.errors.count, "error") %> prohibited this historial_de_compra from being saved:</h2>
 
-      <ul>
-      <% @historial_de_compra.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+        <ul>
+        <% @historial_de_compra.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+      <div class="cintilla_formularios">
+        <h2>Nuevo Historial de Compras</h2>
+      </div>
+
+      <p><%= f.label :nombre_generico %>
+      <%= f.text_field :nombre_generico %></p>
+
+      <p><%= f.label :description %>
+      <%= f.text_field :description %></p>
+
+      <p><%= f.label :cantidad %>
+      <%= f.text_field :cantidad %></p>
+
+      <p><%= f.label :unidad %>
+      <%= f.text_field :unidad %></p>
+
+      <p><%= f.label :precio %>
+      <%= f.text_field :precio %></p>
+
+      <p><%= f.label :multiplicador %>
+      <%= f.text_field :multiplicador %></p>
+      
+      <p><%= f.label :category_id %>
+      <%= f.text_field :category_id %></p>
+
+      <p><%= f.label :origen %>
+      <%= f.text_field :origen %></p>
+
+    <div class="actions">
+      <%= f.submit %>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= f.label :nombre_generico %><br>
-    <%= f.text_field :nombre_generico %>
-  </div>
-  <div class="field">
-    <%= f.label :description %><br>
-    <%= f.text_field :description %>
-  </div>
-  <div class="field">
-    <%= f.label :cantidad %><br>
-    <%= f.text_field :cantidad %>
-  </div>
-  <div class="field">
-    <%= f.label :unidad %><br>
-    <%= f.text_field :unidad %>
-  </div>
-  <div class="field">
-    <%= f.label :precio %><br>
-    <%= f.text_field :precio %>
-  </div>
-  <div class="field">
-    <%= f.label :multiplicador %><br>
-    <%= f.text_field :multiplicador %>
-  </div>
-  <div class="field">
-    <%= f.label :category_id %><br>
-    <%= f.text_field :category_id %>
-  </div>
-  <div class="field">
-    <%= f.label :origen %><br>
-    <%= f.text_field :origen %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+</div>
