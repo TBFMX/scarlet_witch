@@ -129,9 +129,10 @@ $(document).ready(function(){
           <%= f.label :fecha_entrega %><br>
           <%= f.date_select :fecha_entrega %>
         </div>
-        <div class="field">
-          <%= f.date_select :fecha_pedido, Time.now %> <!-- cambiar por calendario de ser posible -->
-        </div>            
+        <!--<div class="field">-->
+          <%#= f.date_select :fecha_pedido, Time.now %> 
+          <!-- cambiar por calendario de ser posible -->
+       <!--</div>       -->     
         <div class="actions">
           <%= f.submit "Ordenar" %>
         </div>

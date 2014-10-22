@@ -5,7 +5,36 @@ body{background-color: #fff;}
 	max-width: 1024px;
 	min-height: 500px;
 	border:1px solid #000;
-	margin: 0 auto 0 auto;
+	margin: 10px auto 10px auto;
+}
+
+#banner{
+	min-width: 500px;
+	max-width: 1024px;	
+	display: block;
+	background-color: #555555;
+	height: 80px;
+	margin: 0 auto 0 auto;	
+}
+
+#footer{
+	min-width: 500px;
+	max-width: 1024px;	
+	display: block;
+	background-color: #555555;
+	height: 20px;
+	margin: 0 auto 0 auto;		
+}
+
+#footer ul{
+	list-style: none;
+	display: block;
+}
+
+#footer ul li{
+	width: 20%;
+	margin-top:2px;
+	float: left;
 }
 
 h1{ font-size: 30px; 

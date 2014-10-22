@@ -56,6 +56,7 @@ controller :sessions do
     get 'pago_nuevo' => :pago_nuevo
     post 'pago_nuevo' => :pago_nuevo
     get 'envio_c' => :envio_c
+    get 'programar' => :programar , :as => 'programar_pedido'
   end
 
   controller :recipes do
