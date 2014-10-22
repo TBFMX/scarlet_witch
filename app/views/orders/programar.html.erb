@@ -32,6 +32,12 @@ $(document).ready(function(){
   $("#hide_total").click(function(){
     $("#total").hide();
   });    
+  $("#hide_programar").click(function(){
+    $("#programar").hide();
+  });
+  $("#show_programar").click(function(){
+    $("#programar").show();
+  });  
 });
 
   $(function() {
@@ -52,6 +58,27 @@ $(document).ready(function(){
         </ul>
       </div>
     <% end %>
+
+    <div class="cintilla_pedidos">
+      <h2>Elige la fecha de tu pedido</h2>
+      <img id="show_programar" src="../../images/plus-icon.png">
+      <img id="hide_programar" src="../../images/less.jpg">
+    </div>
+
+    <div id ="programar">
+      <div class="mostrar_total">   
+        <div class="field">
+          <%= f.label :tipo_entrega %><br>
+          <%= f.select(:tipo_entrega, [["Entrega","Entrega"],["Recoger","Recoger"]]) %>
+        </div>
+        <div class="field">
+          <%= f.label :fecha_entrega %><br>
+          <%= f.text_field :fecha_entrega, id: "datepicker" %>
+        </div>         
+        <div class="field">
+        </div>        
+      </div>    
+    </div> 
 
     <div class="cintilla_pedidos">
       <h2>Lasagnas</h2>
@@ -133,16 +160,12 @@ $(document).ready(function(){
     <div id ="total">
       <div class="mostrar_total">   
         <div class="field">
-          <%= f.label :tipo_entrega %><br>
-          <%= f.select(:tipo_entrega, [["Entrega","Entrega"],["Recoger","Recoger"]]) %>
         </div>
-        <div class="field">
-          <%= f.label :fecha_entrega %><br>
-          <%= f.text_field :fecha_entrega, id: "datepicker" %>
-        </div> 
         <div class="actions">
           <%= f.submit "Ordenar" %>
-        </div>
+        </div>        
+        <div class="field">
+        </div> 
       </div>    
     </div> 
 
