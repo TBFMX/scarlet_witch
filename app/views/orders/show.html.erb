@@ -1,34 +1,38 @@
-<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Client:</strong>
-  <%= @order.client_id %>
-</p>
+<div class="orden_ticket sombreado">
 
-<p>
-  <strong>Fecha pedido:</strong>
-  <%= @order.fecha_pedido %>
-</p>
+  <p id="notice"><%= notice %></p>
+  <h2 class="cintilla_ticket">Comprobante de Orden</h2>
+  <p>
+    <strong>Cliente:</strong>
+    <%= @order.client_id %>
+  </p>
 
-<p>
-  <strong>Tipo pago:</strong>
-  <%= @order.tipo_pago %>
-</p>
+  <p>
+    <strong>Fecha pedido:</strong>
+    <%= @order.fecha_pedido %>
+  </p>
 
-<p>
-  <strong>Tipo entrega:</strong>
-  <%= @order.tipo_entrega %>
-</p>
+  <p>
+    <strong>Tipo pago:</strong>
+    <%= @order.tipo_pago %>
+  </p>
 
-<p>
-  <strong>Fecha entrega:</strong>
-  <%= @order.fecha_entrega %>
-</p>
+  <p>
+    <strong>Tipo entrega:</strong>
+    <%= @order.tipo_entrega %>
+  </p>
 
-<p>
-  <strong>Status:</strong>
-  <%= @order.status %>
-</p>
+  <p>
+    <strong>Fecha entrega:</strong>
+    <%= @order.fecha_entrega %>
+  </p>
 
+  <p>
+    <strong>Estatus del pedido:</strong>
+    <%= @order.status %>
+  </p>
+
+</div>
 <%= link_to 'Edit', edit_order_path(@order) %> |
 <%= link_to 'Back', orders_path %>

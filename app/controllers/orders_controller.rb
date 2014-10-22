@@ -72,7 +72,7 @@ class OrdersController < ApplicationController
               end 
             end   
           end     
-          redirect_to @order, notice: 'Su orden a sido procesada'
+          redirect_to pagar_path, notice: 'Su orden a sido procesada'
         }
         format.json { render :show, status: :created, location: @order }
       else
@@ -83,7 +83,12 @@ class OrdersController < ApplicationController
   end
 
   def programar
-
+    @order = Order.new
+    @cliente_id = 1
+    ##optenemos los articulos
+    @lasagna = Articulo.where("tipo = 1")
+    @ensalada = Articulo.where("tipo = 2")
+    @aderezo = Articulo.where("tipo = 3")
   end
 
   def agregar_programa

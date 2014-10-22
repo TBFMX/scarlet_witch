@@ -19,10 +19,14 @@ $(document).ready(function(){
   $("#show_aderezo").click(function(){
     $("#aderezo").show();
   });
-
-
-
+  $("#show_total").click(function(){
+    $("#total").show();
+  });
+  $("#hide_total").click(function(){
+    $("#total").hide();
+  });    
 });
+
 </script>
 
   <%= form_for(@order) do |f| %>
@@ -37,62 +41,102 @@ $(document).ready(function(){
         </ul>
       </div>
     <% end %>
-    <p>Lasagnas </p><img id="hide_lasagna" src="../../images/less.jpg">
-    <img id="show_lasagna" src="../../images/plus-icon.png">
-    <div id ="lasagna"> 
+
+    <div class="cintilla_pedidos">
+      <h2>Lasagnas</h2>
+      <img id="show_lasagna" src="../../images/plus-icon.png">
+      <img id="hide_lasagna" src="../../images/less.jpg">
+    </div>
+
+    <div id="lasagna"> 
       <% @lasagna.each do |las| %>
-        <div class="field">
-          <%= label_tag las.title.to_s + ":  " %><%= number_field_tag las.title.to_s ,"", maxlength: 2, class: "articulos" %>
-          <img src="../../images/roto.jpg" class="articulos_img"  >
+        <div class="mostrar_articulos">
+        <img src="../../images/lasagna-001.jpg">
+        <h3><%=  las.title.to_s + ":" %></h3>
+        <div class="cantidad">
+          <h4>Cantidad:</h4>
+          <%= number_field_tag las.title.to_s ,"", maxlength: 2, class: "articulos" %>
+        </div> 
         </div>
       <% end %>
     </div>
-    <p>Ensaladas </p>
-    <img id="hide_ensalada" src="../../images/less.jpg">
-    <img id="show_ensalada" src="../../images/plus-icon.png">
+
+    <div class="cintilla_pedidos">
+      <h2>Ensaladas </h2>
+      <img id="show_ensalada" src="../../images/plus-icon.png">      
+      <img id="hide_ensalada" src="../../images/less.jpg">
+    </div>
+
     <div id ="ensalada"> 
       <% @ensalada.each do |ens| %>
-        <div class="field">
-          <%= label_tag ens.title.to_s + ":  " %><%= number_field_tag ens.title.to_s ,"", maxlength: 2, class: "articulos"%>
-          <img src="../../images/roto.jpg" class="articulos_img"  >
+        <div class="mostrar_articulos">
+        <img src="../../images/lasagna-002.jpg">
+        <h3><%=  ens.title.to_s + ":" %></h3>
+        <div class="cantidad">
+          <h4>Cantidad:</h4>
+          <%= number_field_tag ens.title.to_s ,"", maxlength: 2, class: "articulos" %>
+        </div> 
         </div>
       <% end %>
     </div>
-    <p>Aderezos</p>
-    <img id="hide_aderezo" src="../../images/less.jpg">
-    <img id="show_aderezo" src="../../images/plus-icon.png">
+
+    <div class="cintilla_pedidos">
+      <h2>Aderezos</h2>
+      <img id="show_aderezo" src="../../images/plus-icon.png"> 
+      <img id="hide_aderezo" src="../../images/less.jpg">
+    </div>
+
     <div id ="aderezo"> 
       <% @aderezo.each do |adec| %>
-        <div class="field">
-          <%= label_tag adec.title.to_s + ":  " %><%= number_field_tag adec.title.to_s ,"", maxlength: 2, class: "articulos"%>
-          <img src="../../images/roto.jpg" class="articulos_img"  >
+        <div class="mostrar_articulos">
+        <img src="../../images/lasagna-003.jpg">
+        <h3><%=  adec.title.to_s + ":" %></h3>
+        <div class="cantidad">
+          <h4>Cantidad:</h4>
+          <%= number_field_tag adec.title.to_s ,"", maxlength: 2, class: "articulos" %>
+        </div> 
         </div>
       <% end %>
     </div>
     <div class="field">
       <%#= f.hidden_field :client_id, @cliente_id.to_i %>
     </div>
-    
+    <!--
     <div class="field">
-      <%= f.date_select :fecha_pedido, Time.now %> <!-- cambiar por calendario de ser posible -->
+      <%#= f.hidden_field :fecha_pedido, Time.now %>
     </div>
-    
+    -->
     <!--
     <div class="field">
       <%#= f.label :tipo_pago %><br>
       <%#= f.select_tag(:tipo_pago, options_for_select(["paypal",1]))  %>
     </div>
     -->
-    <div class="field">
-      <%= f.label :tipo_entrega %><br>
-      <%= f.select(:tipo_entrega, [["Entrega","Entrega"],["Recoger","Recoger"]]) %>
+
+    <div class="cintilla_pedidos">
+      <h2>Finalizar Pedido</h2>
+      <img id="show_total" src="../../images/plus-icon.png"> 
+      <img id="hide_total" src="../../images/less.jpg">
     </div>
-    <div class="field">
-      <%= f.label :fecha_entrega %><br>
-      <%= f.date_select :fecha_entrega %>
-    </div>
-    
-    <div class="actions">
-      <%= f.submit %>
-    </div>
+
+    <div id ="total">
+      <div class="mostrar_total">   
+        <div class="field">
+          <%= f.label :tipo_entrega %><br>
+          <%= f.select(:tipo_entrega, [["Entrega","Entrega"],["Recoger","Recoger"]]) %>
+        </div>
+        <div class="field">
+          <%= f.label :fecha_entrega %><br>
+          <%= f.date_select :fecha_entrega %>
+        </div>
+        <!--<div class="field">-->
+          <%#= f.date_select :fecha_pedido, Time.now %> 
+          <!-- cambiar por calendario de ser posible -->
+       <!--</div>       -->     
+        <div class="actions">
+          <%= f.submit "Ordenar" %>
+        </div>
+      </div>    
+    </div> 
+
   <% end %>

@@ -1,0 +1,20 @@
+<div class="formulario_pago sombreado">
+  <h2 class="cintilla_ticket_pago">Forma de Pago</h2>
+    <%= form_tag("/pago_nuevo") do %>
+	
+    	<!-- type = "visa" #<-tarjeta
+        number =  "4417119669820331"#(deben ser 16 sin espacio) <-tarjeta
+        expire_month = "11" #(int)(usar select)(pasar a string) <-tarjeta
+        expire_year = "2018" #(int)(usar select)(pasar a string) <-tarjeta
+        cvv2 = "874" #(int)(3) <- tarjeta
+        first_name = "Joe"#(string) <- tajeta
+        last_name = "Shopper"#(string) <- tajeta -->
+        <p>Nombre: <%= text_field_tag "first_name" %></p>
+        <p>Apellido: <%= text_field_tag "last_name" %></p>
+        <p>Número de Tarjeta: <%= text_field_tag "number" %></p>
+        <p>Tipo de Tarjeta: <%= select_tag "type", "<option>visa</option><option>mastercard</option><option>visa</option>".html_safe %></p>        
+        <p>Mes de Expiración: <%= number_field_tag "expire_month" %></p>
+        <p>Año de Expiración: <%= number_field_tag "expire_year" %></p>
+        <p>Clave: <%= text_field_tag "cvv2" %></p>
+    <% end %>
+</div>
