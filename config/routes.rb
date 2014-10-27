@@ -61,6 +61,12 @@ controller :sessions do
     get 'programar' => :programar , :as => 'programar_pedido'
   end
 
+  controller :ingredients do
+    post 'upload' => :upload , :as => 'upload'
+    post 'ingredients/upload' => :upload 
+    get 'subir' => :import, :as => 'import'
+  end
+
   controller :recipes do
     get "receta/:id/agregar_proceso" => :procesos, :as => 'or_proceso'
     get "receta/:id/agregar_material" => :material, :as => 'or_material'

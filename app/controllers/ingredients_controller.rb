@@ -61,6 +61,30 @@ class IngredientsController < ApplicationController
     end
   end
 
+  def import
+    
+  end
+
+  def upload
+    require 'csv'
+      puts ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>"
+      puts params.inspect
+      puts "<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<"
+
+      puts ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>"
+      puts params[:archivo].inspect
+      puts "<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<"
+
+      # @cvs_file_path = DataFile.save(params[:archivo])
+
+      # unless @cvs_file_path.blank?
+      #   arr_of_rows = CSV.read(@cvs_file_path)
+
+      #   puts arr_of_rows.inspect
+      # end
+      # redirect_to ingredients_path
+  end  
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_ingredient

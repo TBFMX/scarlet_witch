@@ -66,7 +66,6 @@ class OrdersController < ApplicationController
   def envio
     unless session[:user_id].blank? 
       @user_id = session[:user_id]
-      
     else
       redirect_to login_path
     end  
