@@ -1,29 +1,71 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans);
+@import url(http://fonts.googleapis.com/css?family=Roboto+Slab:700);
+
 body{background-color: #fff;}
+
+#banner{
+	min-width: 160px;
+	max-width: 1400px;
+	display: block;
+	height: 160px;
+	margin: 0 auto 0 auto;	
+}
+
+#banner .logo{
+	width: 280px;
+	height: 160px;
+	float: left;
+}
+
+#banner .logo img{
+	margin: 60px 0 60px 60px;
+	padding-right:20px; 
+	border-right: 2px solid #EEDAC6;
+}
+
+#banner .slogan{
+	width: 500px;
+	height: 160px;
+	float: left;
+} 
+
+#banner .slogan p{
+	font-size: 17px;
+	margin-top:60px;
+	margin-left: 20px;
+	color: #644547;
+}
+
+#banner .menu{
+	width: 280px;
+	height: 160px;
+}
+
+#slider{
+	min-width: 500px;
+	max-width: 1400px;	
+	display: block;
+	background-color: #555555;
+	height: 500px;
+	margin: 0 auto 0 auto;	
+}
 
 .contenedor_principal{
 	min-width: 500px;
-	max-width: 1024px;
-	min-height: 500px;
-	border:1px solid #000;
-	margin: 10px auto 10px auto;
-}
-
-#banner{
-	min-width: 500px;
-	max-width: 1024px;	
-	display: block;
-	background-color: #555555;
-	height: 80px;
-	margin: 0 auto 0 auto;	
+	max-width: 1396px;
+	min-height: 641px;
+	margin: 0 auto 0 auto;
+	border-top: 2px solid #EEDAC6;	
 }
 
 #footer{
 	min-width: 500px;
-	max-width: 1024px;	
+	max-width: 1400px;	
 	display: block;
-	background-color: #555555;
-	height: 20px;
-	margin: 0 auto 0 auto;		
+	color: #FFF;
+	background-color: #644547;
+	height: 30px;
+	margin: 0 auto 0 auto;	
 }
 
 #footer ul{
@@ -35,6 +77,8 @@ body{background-color: #fff;}
 	width: 20%;
 	margin-top:2px;
 	float: left;
+	font-size: 17px;
+	font-family: 'Open Sans', sans-serif;	
 }
 
 h1{ font-size: 30px; 
