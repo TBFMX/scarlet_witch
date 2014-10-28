@@ -56,7 +56,7 @@ group :development do
 	gem "sqlite3"
 end
 group :production do
-	#gem "pg"
+	gem "pg"
 end
 
 gem 'omniauth-facebook', '1.4.0'
