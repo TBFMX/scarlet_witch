@@ -2,13 +2,27 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:800);
+@import url(http://fonts.googleapis.com/css?family=Roboto+Slab);
+
+.inicio_botones{
+	width: 1400px;
+	height: 215px;
+	border-top: 2px solid #EEDAC6;
+}
+
+.inicio_botones:hover{
+	width: 1400px;
+	height: 215px;
+	background-color: #EEDAC6;	
+}
+
 .inicio_ordenar{
-	width: 300px;
 	height: 80px;
-	font-size: 30px;
+	font-size: 52px;
+	color: #F19E74;
 	text-align: center;
-	background: #b3b3b3;
-	margin: 20px auto 20px auto;
+	margin: 0 auto 0 auto;
 }
 
 .inicio_ordenar:hover{
@@ -17,10 +31,21 @@
 
 .inicio_ordenar a{
 	line-height: 80px;
+	color: #F19E74;	
 	text-decoration: none;
+	font-family: 'Open Sans', sans-serif;
 }
 
 .inicio_ordenar a:hover{
 	background-color: transparent;
 	text-decoration: none;
+	font-family: 'Open Sans', sans-serif;
+}
+
+.inicio_botones p{
+	text-align: center;
+	font-size: 24px;
+	color: #644547;
+	line-height: 100%;
+	font-family: 'Roboto Slab', serif;
 }

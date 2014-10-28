@@ -59,14 +59,15 @@ $(document).ready(function(){
 
     <div id="lasagna"> 
       <% @lasagna.each do |las| %>
-        <div class="mostrar_articulos">
+        <div class="mostrar_articulos borde_generico">
           
           <div class="imagen">
-            <img src="../../images/lasagna-001.jpg">
+            <img src="../../images/imagenplatillo.png">
           </div>
 
           <div class="descripcion">
             <h3><%=  las.title.to_s + ":" %></h3>
+            <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident"</p>
           </div>
         
           <div class="cantidad">
@@ -85,13 +86,14 @@ $(document).ready(function(){
 
     <div id ="ensalada"> 
       <% @ensalada.each do |ens| %>
-        <div class="mostrar_articulos">
+        <div class="mostrar_articulos borde_generico">
           <div class="imagen">
             <img src="../../images/lasagna-002.jpg">
           </div>
 
         <div class="descripcion">
             <h3><%=  ens.title.to_s + ":" %></h3>
+            <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident"</p>            
         </div>
         
         <div class="cantidad">
@@ -110,7 +112,7 @@ $(document).ready(function(){
 
     <div id ="aderezo"> 
       <% @aderezo.each do |adec| %>
-        <div class="mostrar_articulos">
+        <div class="mostrar_articulos borde_generico">
 
           <div class="imagen">
             <img src="../../images/lasagna-003.jpg">
@@ -118,6 +120,7 @@ $(document).ready(function(){
 
           <div class="descripcion">
             <h3><%=  adec.title.to_s + ":" %></h3>
+            <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident"</p>            
           </div>          
         
         <div class="cantidad">
@@ -142,6 +145,7 @@ $(document).ready(function(){
     </div>
     -->
 
+
     <div class="cintilla_pedidos">
       <h2>Finalizar Pedido</h2>
       <img id="show_total" src="../../images/plus-icon.png"> 
@@ -149,7 +153,7 @@ $(document).ready(function(){
     </div>
 
     <div id ="total">
-      <div class="mostrar_total"> 
+      <div class="mostrar_total borde_generico"> 
         <div class="field">
           <%= f.label :tipo_entrega %><br>
           <%= f.select(:tipo_entrega, [["Entrega","Entrega"],["Recoger","Recoger"]]) %>

@@ -1,1 +1,23 @@
-<div id="banner"></div>
+<div id="banner">
+	<div class="logo">
+		<%= link_to image_tag("/images/logo.png"), root_path %>
+	</div>
+
+	<div class="slogan">
+		<p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit"</p>	
+	</div>
+
+	<div class="cuenta">
+		<%= link_to "SALIR",logout_path , method: :delete %>
+	</div>	
+
+	<div id="menu_principal">
+		<ul>
+			<li><%= link_to "Inicio", root_path %></li>
+			<li><%= link_to "Ordenar", new_order_path %></li>
+			<li><%= link_to "Programar", programar_pedido_path %></li>
+			<li><%= link_to "Conócenos", welcome_aboutUs_path %></li>								
+		</ul>
+	</div>		
+
+</div>

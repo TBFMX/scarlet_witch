@@ -1,29 +1,125 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans);
+@import url(http://fonts.googleapis.com/css?family=Roboto+Slab:400,700);
+
 body{background-color: #fff;}
 
-.contenedor_principal{
-	min-width: 500px;
-	max-width: 1024px;
-	min-height: 500px;
-	border:1px solid #000;
-	margin: 10px auto 10px auto;
-}
+/* ------------ Banner -------------*/
 
 #banner{
-	min-width: 500px;
-	max-width: 1024px;	
+	width: 1400px;
 	display: block;
-	background-color: #555555;
-	height: 80px;
+	height: 160px;
 	margin: 0 auto 0 auto;	
 }
 
+#banner .logo{
+	width: 280px;
+	height: 160px;
+	float: left;
+}
+
+#banner .logo img{
+	margin: 60px 0 60px 60px;
+	padding-right:20px; 
+	border-right: 2px solid #EEDAC6;
+}
+
+#banner .slogan{
+	width: 500px;
+	height: 160px;
+	float: left;
+} 
+
+#banner .slogan p{
+	font-size: 17px;
+	margin-top:60px;
+	margin-left: 20px;
+	color: #644547;
+	font-family: 'Roboto Slab', serif;
+	font-weight: 700;	
+}
+
+#banner .cuenta{
+	width: 620px;
+	height: 40px;
+	text-align: right;
+	float: left;
+}
+
+#banner #menu_principal{
+	width: 620px;
+	height: 120px;
+	float: left;	
+}
+
+#banner #menu_principal ul{
+	width: 100%;
+	height: 40px;
+	margin-top: 20px; 
+	list-style: none;
+	text-align: right;
+}
+
+#banner #menu_principal ul li{
+	min-width: 50px;
+	width: 20%; 
+	float: left;
+	font-size: 17px;
+	font-family: 'Roboto Slab', serif;
+	font-weight: 400;	
+	color: #644547;	
+	text-align: center;
+}
+
+#banner #menu_principal ul li:hover{
+	font-family: 'Roboto Slab', serif;
+	font-weight: 700;	
+	color: #F19E74;	
+	border-top: 2px solid #EEDAC6;
+	text-align: center;	
+}
+
+#banner #menu_principal ul li a{
+	text-decoration: none;
+}
+
+#banner #menu_principal ul li a:hover{
+	text-decoration: none;
+	background-color: transparent;
+	color: #F19E74;		
+}
+
+/* ------------ Slider -------------*/
+
+#slider{
+	min-width: 500px;
+	max-width: 1400px;	
+	display: block;
+	height: 500px;
+	margin: 0 auto 0 auto;	
+}
+
+/* ------------ Contenido -------------*/
+
+.contenedor_principal{
+	min-width: 500px;
+	max-width: 1396px;
+	min-height: 641px;
+	margin: 0 auto 0 auto;
+	border-top: 2px solid #EEDAC6;	
+}
+
+
+/* ------------ Footer -------------*/
+
 #footer{
 	min-width: 500px;
-	max-width: 1024px;	
+	max-width: 1400px;	
 	display: block;
-	background-color: #555555;
-	height: 20px;
-	margin: 0 auto 0 auto;		
+	color: #FFF;
+	background-color: #644547;
+	height: 30px;
+	margin: 0 auto 0 auto;	
 }
 
 #footer ul{
@@ -35,14 +131,18 @@ body{background-color: #fff;}
 	width: 20%;
 	margin-top:2px;
 	float: left;
+	font-size: 17px;
+	font-family: 'Open Sans', sans-serif;	
 }
+
+/* ------------ Otros -------------*/
 
 h1{ font-size: 30px; 
     padding: 5px; }
 h2{ font-size: 30px;
     padding: 5px;
     margin: 0;}
-h3{ font-size: 20px;}
+h3{ font-size: 30px;}
 h4{ font-size: 20px; padding: 0; margin: 0 0 10px 0;}
 h5{ font-size: 20px;}
 h6{ font-size: 20px;}
@@ -57,4 +157,12 @@ thead{	background-color: #a3a3a3;
 .sombreado{
   -webkit-box-shadow: 2px 2px 5px #999;
   -moz-box-shadow: 2px 2px 5px #999;
+}
+
+#seleccionado{
+	border-top: 2px solid #EEDAC6;
+}
+
+.borde_generico{
+	border: 2px solid #EEDAC6;
 }
