@@ -48,6 +48,9 @@ gem 'omniauth-facebook', '1.4.0'
 gem 'omniauth-google-oauth2'
 gem 'omniauth-twitter'
 gem 'omniauth-identity' #esta no se explota al 100
+#gem "social-buttons", '~> 0.3'
+gem "social-buttons", git: "git://github.com/kristianmandrup/social-buttons.git"
+#gem "sms_fu"
 ## gemas de apariciencia
 gem "breadcrumbs_on_rails"
 gem 'exception_notification'
@@ -59,11 +62,4 @@ group :production do
 	#gem "pg"
 end
 
-gem 'omniauth-facebook', '1.4.0'
-gem 'omniauth-google-oauth2'
-gem 'omniauth-twitter'
-gem 'omniauth-identity'
 
-#gem "social-buttons", '~> 0.3'
-gem "social-buttons", git: "git://github.com/kristianmandrup/social-buttons.git"
-#gem "sms_fu"

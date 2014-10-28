@@ -8,19 +8,22 @@ class DataFile < ActiveRecord::Base
 		carpeta = "csv"
 
 		#variables de diferenciación
-		@yolo = rand(5..120)
-		@yolo2 = rand(5..120)
+		#@yolo = rand(5..120)
+		#@yolo2 = rand(5..120)
 		############################
 		#upload.original_filename = @yolo2.to_s + "_" + @yolo.to_s + "_" +upload.original_filename 
 	    name =  upload.original_filename
 	    
 		
 	    @path2 = ""
+	    @path = ""
 
     	directory = "public/data"
+    	#directory = "app/assets/data"
     	Dir.chdir(directory) do
 	    	directory = carpeta.to_s
 	    	path = File.join(directory, name)
+	    	@path = path
 			# puts "-----------------direccion actual-2--------------"
 			# puts Dir.pwd
 			# puts "------------------------------------------------"
@@ -31,13 +34,14 @@ class DataFile < ActiveRecord::Base
 			##############
 
 		    dir ="/data/" + carpeta.to_s
+		    #dir ="/app/assets/data/" + carpeta.to_s
 		    @path2 = File.join(dir, name)
 		    # write the file
 		    File.open(path, "wb") { |f| f.write(upload.read) }
 
 	    end
 
-	    return @path2
+	    return @path
 	end
 
 	def self.destroy(url)

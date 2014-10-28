@@ -28,7 +28,7 @@ $.each(inputFile.files, function() {
 </script>
 -->
 
-<%= form_tag "ingredients/upload" do %>
+<%= form_tag "ingredients/upload" , :multipart => true do %>
 <%= label_tag "archivo"%>
 <%= file_field_tag "archivo"%>
  <%= submit_tag "Subir" %>

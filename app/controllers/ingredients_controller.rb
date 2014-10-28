@@ -67,22 +67,46 @@ class IngredientsController < ApplicationController
 
   def upload
     require 'csv'
+      @cvs_file_path = DataFile.save(params[:archivo])
       puts ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>"
-      puts params.inspect
+      puts @cvs_file_path
       puts "<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<"
 
-      puts ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>"
-      puts params[:archivo].inspect
-      puts "<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<"
+      unless @cvs_file_path.blank?
+        puts "-----------------direccion actual-2--------------"
+        puts Dir.pwd
+        puts "------------------------------------------------"
+        directory = "public/data"
+        Dir.chdir(directory) do
+          if File.exist?(@cvs_file_path.to_s)
+            puts "esta en local"
+            arr_of_rows = CSV.read(@cvs_file_path.to_s)
+           
+            puts arr_of_rows.inspect
 
-      # @cvs_file_path = DataFile.save(params[:archivo])
-
-      # unless @cvs_file_path.blank?
-      #   arr_of_rows = CSV.read(@cvs_file_path)
-
-      #   puts arr_of_rows.inspect
-      # end
-      # redirect_to ingredients_path
+          else
+            if File.exist?(@cvs_file_path.to_s)
+              puts "esta en produccion"
+              arr_of_rows = CSV.read(@cvs_file_path.to_s)
+              puts arr_of_rows.inspect
+            else
+              puts "------------------------------------------------"
+              puts "no entro a ninguno"
+              puts @cvs_file_path.to_s
+              puts @cvs_file_path.to_s
+              puts "------------------------------------------------"
+            end
+          end
+        end  
+        
+        arr_of_rows.each do |a|
+          aux_contenier = a
+          if aux_contenier.size == 9 and aux_contenier[0] != "nombre"
+            Model.crete(nombre_generico: aux_contenier[0],description: aux_contenier[1],cantidad: aux_contenier[2],unidad: aux_contenier[3],precio: aux_contenier[4],multiplicador: aux_contenier[5],category_id: aux_contenier[6],subcategory_id: aux_contenier[7],origen: aux_contenier[8])
+          end
+        end
+      end
+      #redirect_to ingredients_path
   end  
 
   private
