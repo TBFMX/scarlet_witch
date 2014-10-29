@@ -102,19 +102,17 @@ body{background-color: #fff;}
 /* ------------ Contenido -------------*/
 
 .contenedor_principal{
-	min-width: 500px;
-	max-width: 1396px;
-	min-height: 641px;
+	width: 1396px;
 	margin: 0 auto 0 auto;
 	border-top: 2px solid #EEDAC6;	
+	overflow: hidden;
 }
 
 
 /* ------------ Footer -------------*/
 
 #footer{
-	min-width: 500px;
-	max-width: 1400px;	
+	width: 1400px;	
 	display: block;
 	color: #FFF;
 	background-color: #644547;
@@ -165,4 +163,40 @@ thead{	background-color: #a3a3a3;
 
 .borde_generico{
 	border: 2px solid #EEDAC6;
+}
+
+/*------------------------------------*/
+/*-------ESTILO PARA IPHONE ----------*/
+/*------------------------------------*/
+
+@media (min-width: 320px) and (max-width: 400px) {
+
+	body{
+		margin: 0px;
+		padding: 0px;
+		background-color: #644547;
+	}
+
+	#banner{ display: none;}
+	#footer{ display: none;}
+
+	/* ------------ Slider -------------*/
+
+	#slider{
+		width: 320px;
+		height: 200px;
+		display: block;
+		margin: 0 auto 0 auto;	
+		overflow: hidden;
+	}
+
+	/* ------------ Contenido -------------*/
+
+	.contenedor_principal{
+		width: 100%;
+		min-height: 540px;
+		margin: 0 auto 0 auto;
+		border-top: 2px solid #EEDAC6;	
+	}
+
 }

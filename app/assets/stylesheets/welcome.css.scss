@@ -5,6 +5,9 @@
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:800);
 @import url(http://fonts.googleapis.com/css?family=Roboto+Slab);
 
+
+.inicio_botones_mobile{display: none;}
+
 .inicio_botones{
 	width: 1400px;
 	height: 215px;
@@ -13,7 +16,6 @@
 
 .inicio_botones:hover{
 	width: 1400px;
-	height: 215px;
 	background-color: #EEDAC6;	
 }
 
@@ -48,4 +50,47 @@
 	color: #644547;
 	line-height: 100%;
 	font-family: 'Roboto Slab', serif;
+}
+
+@media (min-width: 320px) and (max-width: 400px) {
+
+	.inicio_botones{
+		display: none;
+	}
+
+	.inicio_botones_mobile{
+		display: block;
+	}	
+
+	.inicio_botones_mobile ul{
+		list-style: none;
+		margin: 0px;
+		padding: 0px;
+		min-width: 320px;
+		max-width: 100%;
+	}
+
+	.inicio_botones_mobile ul li{
+		min-width: 320px;
+		max-width: 100%;
+		height: 120px;
+		border-top: 2px solid #EEDAC6;	
+		text-align: center;	
+		vertical-align: middle;
+	}	
+
+	.inicio_botones_mobile ul li:hover{
+		background-color: #EEDAC6;
+		opacity: 0.5;
+	}
+
+	.inicio_botones_mobile ul li a{
+		line-height: 100px;
+		color: #F19E74;	
+		font-size: 30px;
+		text-align: center;
+		text-decoration: none;
+		font-family: 'Open Sans', sans-serif;
+	}
+
 }
