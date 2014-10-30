@@ -102,7 +102,7 @@ class IngredientsController < ApplicationController
         arr_of_rows.each do |a|
           aux_contenier = a
           if aux_contenier.size == 9 and aux_contenier[0] != "nombre"
-            Model.crete(nombre_generico: aux_contenier[0],description: aux_contenier[1],cantidad: aux_contenier[2],unidad: aux_contenier[3],precio: aux_contenier[4],multiplicador: aux_contenier[5],category_id: aux_contenier[6],subcategory_id: aux_contenier[7],origen: aux_contenier[8])
+            HistorialDeCompra.crete(nombre_generico: aux_contenier[0],description: aux_contenier[1],cantidad: aux_contenier[2],unidad: aux_contenier[3],precio: aux_contenier[4],multiplicador: aux_contenier[5],category_id: aux_contenier[6],subcategory_id: aux_contenier[7],origen: aux_contenier[8])
           end
         end
       end
