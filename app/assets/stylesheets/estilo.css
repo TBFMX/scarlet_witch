@@ -183,8 +183,165 @@ thead{	background-color: #a3a3a3;
 	/* ------------ Slider -------------*/
 
 	#slider{
-		width: 320px;
+		min-width: 320px;
+		max-width: 400px;
 		height: 200px;
+		display: block;
+		margin: 0 auto 0 auto;	
+		overflow: hidden;
+	}
+
+	/* ------------ Contenido -------------*/
+
+	.contenedor_principal{
+		width: 100%;
+		min-height: 540px;
+		margin: 0 auto 0 auto;
+		border-top: 2px solid #EEDAC6;	
+	}
+
+}
+
+/*------------------------------------*/
+/*-------ESTILO PARA IPHONE ----------*/
+/*------------------------------------*/
+
+@media (min-width: 401px) and (max-width: 640px) {
+
+	body{
+		margin: 0px;
+		padding: 0px;
+		background-color: #644547;
+	}
+
+	#banner{ display: none;}
+	#footer{ display: none;}
+
+	/* ------------ Slider -------------*/
+
+	#slider{
+		min-width: 401px;
+		max-width: 640px;
+		height: 250px;
+		display: block;
+		margin: 0 auto 0 auto;	
+		overflow: hidden;
+	}
+
+	/* ------------ Contenido -------------*/
+
+	.contenedor_principal{
+		width: 100%;
+		min-height: 540px;
+		margin: 0 auto 0 auto;
+		border-top: 2px solid #EEDAC6;	
+	}
+
+}
+
+/*------------------------------------*/
+/*-------ESTILO PARA IPHONE ----------*/
+/*------------------------------------*/
+
+@media (min-width: 641px) and (max-width: 960px) {
+
+	body{
+		margin: 0px;
+		padding: 0px;
+		background-color: #fff;
+	}
+
+
+	/* ------------ Banner -------------*/
+
+	#banner{
+		min-width: 641px;
+		max-width: 960px;
+		display: block;
+		height: 90px;
+		margin: 0 auto 0 auto;	
+	}
+
+	#banner .logo{
+		width: 250px;
+		height: 90px;
+		float: left;
+	}
+
+	#banner .logo img{
+		margin: 30px 0 30px 10px;
+		padding-right:20px; 
+		border-right: 2px solid #EEDAC6;
+	}
+
+	#banner .slogan,
+	#banner .slogan p{
+		display: none;
+	} 
+
+	#banner .cuenta{
+		width: 360px;
+		height: 40px;
+		text-align: right;
+		float: right;
+		padding-right: 10px;
+		position: relative;
+
+	}
+
+	#banner #menu_principal{
+		width: 360px;
+		min-width: 250px;
+		max-width: 100%;
+		height: 50px;
+		float: right;	
+		padding-right: 10px;
+		position: relative;
+	}
+
+	#banner #menu_principal ul{
+		width: 360px;
+		height: 40px;
+		margin-top: 0px; 
+		list-style: none;
+		text-align: right;
+		margin-left: -50px;
+	}
+
+	#banner #menu_principal ul li{
+		float: left;
+		font-size: 15px;
+		font-family: 'Roboto Slab', serif;
+		font-weight: 400;	
+		color: #644547;	
+		text-align: center;
+		padding-right: 16px;
+	}
+
+	#banner #menu_principal ul li:hover{
+		font-family: 'Roboto Slab', serif;
+		font-weight: 700;	
+		color: #F19E74;	
+		border-top: 2px solid #EEDAC6;
+		text-align: center;	
+	}
+
+	#banner #menu_principal ul li a{
+		text-decoration: none;
+	}
+
+	#banner #menu_principal ul li a:hover{
+		text-decoration: none;
+		background-color: transparent;
+		color: #F19E74;		
+	}
+
+	/* ------------ Slider -------------*/
+
+	#slider{
+		min-width: 641px;
+		max-width: 960px;
+		height: 250px;
 		display: block;
 		margin: 0 auto 0 auto;	
 		overflow: hidden;
