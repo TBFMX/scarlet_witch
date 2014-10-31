@@ -6,8 +6,14 @@
     ciudad = params[:ciudad]
     estado = params[:estado] 
     -->
-    <%= text_field_tag "calle" %>
-    <%= text_field_tag "colonia" %>
-    <%= text_field_tag "ciudad" %>
-    <%= text_field_tag "estado" %>
+    <%= label_tag "calle" %> </br>
+    <%= text_field_tag "calle" %></br>
+    <%= label_tag "colonia" %></br>
+    <%= text_field_tag "colonia" %></br>
+    <%= label_tag "ciudad" %></br>
+    <%= text_field_tag "ciudad" %></br>
+    <%= label_tag "estado" %></br>
+    <%= text_field_tag "estado" %></br>
+    <%= hidden_field_tag "id", @order_id %>
+    <%= submit_tag %>
 <% end %>

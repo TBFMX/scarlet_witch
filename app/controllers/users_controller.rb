@@ -41,7 +41,7 @@ class UsersController < ApplicationController
     respond_to do |format|
       if @user.save
         Mailer.create_user(@user).deliver
-        format.html { redirect_to @user, notice: "El usuario #{@user.username} fue creado exitosamente." }
+        format.html { redirect_to redirect_to session[:lasurl], notice: "El usuario #{@user.username} fue creado exitosamente." }
         format.json { render :show, status: :created, location: @user }
       else
         format.html { render :new }
@@ -58,7 +58,7 @@ class UsersController < ApplicationController
     respond_to do |format|
       if @user.save
         Mailer.create_user(@user).deliver
-        format.html { redirect_to @user, notice: "El usuario #{@user.username} fue creado exitosamente." }
+        format.html { redirect_to redirect_to session[:lasurl], notice: "El usuario #{@user.username} fue creado exitosamente." }
         format.json { render :show, status: :created, location: @user }
       else
         format.html { render :new }

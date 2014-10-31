@@ -68,7 +68,9 @@ class OrdersController < ApplicationController
       @user_id = session[:user_id]
     else
       redirect_to login_path
-    end  
+    end
+
+    @order_id = params[:id] 
   end
 
   def envio_c
@@ -76,6 +78,7 @@ class OrdersController < ApplicationController
     colonia = params[:colonia]
     ciudad = params[:ciudad]
     estado = params[:estado] 
+    @order = Order.find(params[:id])
     respond_to do |format|
       if @order.update(:calle => calle, :colonia => colonia, :ciudad => ciudad, :estado => estado ,:status => 1 )
         format.html { render :pagar , notice: 'Order was successfully updated.' }
