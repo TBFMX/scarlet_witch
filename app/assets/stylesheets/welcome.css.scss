@@ -190,3 +190,54 @@
 		font-family: 'Roboto Slab', serif;
 	}
 }
+
+@media (min-width: 961px) and (max-width: 1280px) {
+
+
+	.inicio_botones{
+		width: 90%;
+		height: 250px;
+		border-top: 2px solid #EEDAC6;
+		margin: 0 auto 0 auto;
+		overflow: hidden;
+	}
+
+	.inicio_botones:hover{
+		width: 90%;
+		background-color: #EEDAC6;	
+	}
+
+	.inicio_ordenar{
+		height: 80px;
+		font-size: 52px;
+		color: #F19E74;
+		text-align: center;
+		margin: 0 auto 0 auto;
+	}
+
+	.inicio_ordenar:hover{
+		opacity: 0.5;
+	}
+
+	.inicio_ordenar a{
+		line-height: 80px;
+		color: #F19E74;	
+		text-decoration: none;
+		font-family: 'Open Sans', sans-serif;
+	}
+
+	.inicio_ordenar a:hover{
+		background-color: transparent;
+		text-decoration: none;
+		font-family: 'Open Sans', sans-serif;
+	}
+
+	.inicio_botones p{
+		text-align: center;
+		font-size: 20px;
+		color: #644547;
+		line-height: 100%;
+		padding: 14px;
+		font-family: 'Roboto Slab', serif;
+	}
+}

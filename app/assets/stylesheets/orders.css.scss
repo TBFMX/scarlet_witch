@@ -30,27 +30,35 @@
     padding: 5px;
 }
 
-.mostrar_articulos{
-	width: 1380px;
+.mostrar_articulo_lasagna,
+.mostrar_articulo_ensalada,
+.mostrar_articulo_adereso{
+	width: 1370px;
 	height: 320px;
 	padding: 10px;
 	margin: 10px auto 0 auto;
 }
 
-.mostrar_articulos .imagen{
-	width: 640px;
+.mostrar_articulo_lasagna .imagen,
+.mostrar_articulo_ensalada .imagen,
+.mostrar_articulo_adereso .imagen{
+	width: 620px;
 	height: 319px;
 	float: left;
 }
 
 
-.mostrar_articulos img{
-	width: 640px;
+.mostrar_articulo_lasagna img,
+.mostrar_articulo_ensalada img,
+.mostrar_articulo_adereso img{
+	width: 620px;
 	height: 319px;
 }
 
-.mostrar_articulos .descripcion{
-	max-width: 560px;
+.mostrar_articulo_lasagna .descripcion,
+.mostrar_articulo_ensalada .descripcion,
+.mostrar_articulo_adereso .descripcion{
+	max-width: 550px;
 	height: 140px;
 	/*border: 1px solid #b3b3b3;*/
 	float: left;
@@ -60,7 +68,9 @@
 	color: #644547;
 }
 
-.mostrar_articulos .descripcion h3{  
+.mostrar_articulo_lasagna .descripcion h3,
+.mostrar_articulo_ensalada .descripcion h3,
+.mostrar_articulo_adereso .descripcion h3{  
 	margin-top: -10px;
 	text-transform: capitalize;
 	color: #F19E74;
@@ -68,7 +78,9 @@
 	font-weight: 700;
 }
 
-.mostrar_articulos .descripcion p{  
+.mostrar_articulo_lasagna .descripcion p,
+.mostrar_articulo_ensalada .descripcion p,
+.mostrar_articulo_adereso .descripcion p{  
 	font-size: 24px;
 	color: #644547;
 	font-family: 'Roboto Slab', sans-serif;
@@ -77,7 +89,9 @@
 	text-align: justify;
 }
 
-.mostrar_articulos .cantidad{
+.mostrar_articulo_lasagna .cantidad,
+.mostrar_articulo_ensalada .cantidad,
+.mostrar_articulo_adereso .cantidad{
 	width: 140px;
 	height: 140px;
 	/*border: 1px solid #b3b3b3;*/
@@ -90,7 +104,9 @@
 	font-weight: 400;	
 }
 
-.mostrar_articulos .cantidad input{
+.mostrar_articulo_lasagna .cantidad input,
+.mostrar_articulo_ensalada .cantidad input,
+.mostrar_articulo_adereso .cantidad input{
 	width: 100%;
 	height: 40px;
 	font-family: 'Open Sans', sans-serif;
@@ -101,10 +117,11 @@
 
 .mostrar_total,
 .mostrar_total_programar{
-	width: 1380px;
+	width: 1370px;
 	height: 60px;
 	padding: 10px;
 	margin: 5px auto 20px auto;
+	float: left;
 }
 
 .mostrar_total .field,
@@ -211,7 +228,9 @@
 	    padding: 1px;
 	}
 
-	.mostrar_articulos{
+	.mostrar_articulo_lasagna,
+	.mostrar_articulo_ensalada,
+	.mostrar_articulo_aderezo{
 		min-width: 310px;			
 		width: 100%;
 		max-width: 390px;
@@ -223,12 +242,18 @@
 		overflow: hidden;
 	}
 
-	.mostrar_articulos .imagen,
-	.mostrar_articulos img{
+	.mostrar_articulo_lasagna .imagen,
+	.mostrar_articulo_lasagna img,
+	.mostrar_articulo_ensalada .imagen,
+	.mostrar_articulo_ensalada img,
+	.mostrar_articulo_aderezo .imagen,
+	.mostrar_articulo_aderezo img{
 		display: none;
 	}
 
-	.mostrar_articulos .descripcion{
+	.mostrar_articulo_lasagna .descripcion,
+	.mostrar_articulo_ensalada .descripcion,
+	.mostrar_articulo_aderezo .descripcion{
 		width: 95%;
 		height: 100px;
 		/*border: 1px solid #b3b3b3;*/
@@ -239,7 +264,9 @@
 		color: #644547;
 	}
 
-	.mostrar_articulos .descripcion h3{  
+	.mostrar_articulo_lasagna .descripcion h3,
+	.mostrar_articulo_ensalada .descripcion h3,
+	.mostrar_articulo_aderezo .descripcion h3,		{  
 		margin-top: 1px;
 		font-size: 16px;
 		text-transform: capitalize;
@@ -250,7 +277,9 @@
 		padding-top: 2px; 
 	}
 
-	.mostrar_articulos .descripcion p{
+	.mostrar_articulo_lasagna .descripcion p,
+	.mostrar_articulo_ensalada .descripcion p,
+	.mostrar_articulo_aderezo .descripcion p{
 		margin-top: -7px;
 		font-size: 14px;
 		color: #644547;
@@ -259,7 +288,9 @@
 		line-height: 100%;
 	}
 
-	.mostrar_articulos .cantidad{
+	.mostrar_articulo_lasagna .cantidad,
+	.mostrar_articulo_ensalada .cantidad,
+	.mostrar_articulo_aderezo .cantidad{
 		width: 60px;
 		height: 25px;
 		/*border: 1px solid #b3b3b3;*/
@@ -274,7 +305,9 @@
 		position: relative;
 	}
 
-	.mostrar_articulos .cantidad input{
+	.mostrar_articulo_lasagna .cantidad input,
+	.mostrar_articulo_ensalada .cantidad input,
+	.mostrar_articulo_aderezo .cantidad input{
 		width: 100%;
 		height: 20px;
 		font-family: 'Open Sans', sans-serif;
@@ -377,7 +410,9 @@
 	    padding: 1px;
 	}
 
-	.mostrar_articulos{
+	.mostrar_articulo_lasagna,
+	.mostrar_articulo_ensalada,
+	.mostrar_articulo_aderezo{
 		min-width: 390px;			
 		width: 100%;
 		max-width: 630px;
@@ -389,7 +424,9 @@
 		overflow: hidden;
 	}
 
-	.mostrar_articulos .imagen{
+	.mostrar_articulo_lasagna .imagen,
+	.mostrar_articulo_ensalada .imagen,
+	.mostrar_articulo_aderezo .imagen{
 		width: 150px;
 		height: 100px;
 		padding: 10px 0 10px 0;
@@ -397,12 +434,16 @@
 	}
 
 
-	.mostrar_articulos img{
+	.mostrar_articulo_lasagna img,
+	.mostrar_articulo_ensalada img,
+	.mostrar_articulo_aderezo img{
 		width: 150px;
 		height: 100px;
 	}
 
-	.mostrar_articulos .descripcion{
+	.mostrar_articulo_lasagna .descripcion,
+	.mostrar_articulo_ensalada .descripcion,
+	.mostrar_articulo_aderezo .descripcion{
 		min-width: 150px;
 		max-width: 450px;
 		height: 135px;
@@ -417,7 +458,9 @@
 		overflow: hidden;
 	}
 
-	.mostrar_articulos .descripcion h3{  
+	.mostrar_articulo_lasagna .descripcion h3,
+	.mostrar_articulo_ensalada .descripcion h3,
+	.mostrar_articulo_aderezo .descripcion h3{  
 		margin-top: 1px;
 		font-size: 18px;
 		text-transform: capitalize;
@@ -428,7 +471,9 @@
 		padding-top: 2px; 
 	}
 
-	.mostrar_articulos .descripcion p{
+	.mostrar_articulo_lasagna .descripcion p,
+	.mostrar_articulo_ensalada .descripcion p,
+	.mostrar_articulo_aderezo .descripcion p{
 		margin-top: -7px;
 		font-size: 15px;
 		color: #644547;
@@ -437,7 +482,9 @@
 		line-height: 100%;
 	}
 
-	.mostrar_articulos .cantidad{
+	.mostrar_articulo_lasagna .cantidad,
+	.mostrar_articulo_ensalada .cantidad,
+	.mostrar_articulo_aderezo .cantidad{
 		width: 60px;
 		height: 25px;
 		/*border: 1px solid #b3b3b3;*/
@@ -452,7 +499,9 @@
 		position: relative;
 	}
 
-	.mostrar_articulos .cantidad input{
+	.mostrar_articulo_lasagna .cantidad input,
+	.mostrar_articulo_ensalada .cantidad input,
+	.mostrar_articulo_aderezo .cantidad input{
 		width: 100%;
 		height: 20px;
 		font-family: 'Open Sans', sans-serif;
@@ -555,7 +604,9 @@
 	    padding: 1px;
 	}
 
-	.mostrar_articulos{
+	.mostrar_articulo_lasagna,
+	.mostrar_articulo_ensalada,
+	.mostrar_articulo_aderezo{
 		min-width: 641px;			
 		width: 100%;
 		max-width: 950px;	
@@ -567,7 +618,9 @@
 		overflow: hidden;
 	}
 
-	.mostrar_articulos .imagen{
+	.mostrar_articulo_lasagna .imagen,
+	.mostrar_articulo_ensalada .imagen,
+	.mostrar_articulo_aderezo .imagen{
 		width: 200px;
 		height: 150px;
 		padding: 10px 0 10px 0;
@@ -575,12 +628,16 @@
 	}
 
 
-	.mostrar_articulos img{
+	.mostrar_articulo_lasagna img,
+	.mostrar_articulo_ensalada img,
+	.mostrar_articulo_aderezo img{
 		width: 200px;
 		height: 150px;
 	}
 
-	.mostrar_articulos .descripcion{
+	.mostrar_articulo_lasagna .descripcion,
+	.mostrar_articulo_ensalada .descripcion,
+	.mostrar_articulo_aderezo .descripcion{
 		min-width: 150px;
 		max-width: 650px;
 		height: 150px;
@@ -596,7 +653,9 @@
 		overflow: hidden;
 	}
 
-	.mostrar_articulos .descripcion h3{  
+	.mostrar_articulo_lasagna .descripcion h3,
+	.mostrar_articulo_ensalada .descripcion h3,
+	.mostrar_articulo_aderezo .descripcion h3{  
 		margin-top: 1px;
 		font-size: 18px;
 		text-transform: capitalize;
@@ -607,7 +666,9 @@
 		padding-top: 2px; 
 	}
 
-	.mostrar_articulos .descripcion p{
+	.mostrar_articulo_lasagna .descripcion p,
+	.mostrar_articulo_ensalada .descripcion p,
+	.mostrar_articulo_aderezo .descripcion p	{
 		margin-top: -7px;
 		font-size: 15px;
 		color: #644547;
@@ -616,7 +677,9 @@
 		line-height: 100%;
 	}
 
-	.mostrar_articulos .cantidad{
+	.mostrar_articulo_lasagna .cantidad,
+	.mostrar_articulo_ensalada .cantidad,
+	.mostrar_articulo_aderezo .cantidad{
 		width: 60px;
 		height: 25px;
 		/*border: 1px solid #b3b3b3;*/
@@ -631,7 +694,9 @@
 		position: relative;
 	}
 
-	.mostrar_articulos .cantidad input{
+	.mostrar_articulo_lasagna .cantidad input,
+	.mostrar_articulo_ensalada .cantidad input,
+	.mostrar_articulo_aderezo .cantidad input{
 		width: 100%;
 		height: 20px;
 		font-family: 'Open Sans', sans-serif;
@@ -652,6 +717,291 @@
 		min-width: 641px;			
 		width: 100%;
 		max-width: 950px;			
+		height: 70px;
+		padding: 10px;
+		margin: 5px auto 20px auto;
+		background-color: #FFF;
+	}
+
+	.mostrar_total_programar{
+		height: 60px;
+		max-height: 100px;
+	}
+
+	.mostrar_total .field,
+	.mostrar_total .actions,
+	.mostrar_total_programar .field,
+	.mostrar_total_programar .actions{
+		width: 30%;
+		min-height: 10px;	
+		max-height: 60px;	
+		float:left;
+		margin-left: 1.5%;
+		margin-right: 1.5%;
+	}
+
+	.mostrar_total .actions input,
+	.mostrar_total_programar .actions input{
+		width: 100%;
+		max-width: 300px;
+		height: 60px;
+		font-size: 30px;
+		font-family: 'Open Sans', sans-serif;
+		background-color: #F19E74;
+		border-color: #F19E74;
+		font-weight: 700;
+		margin: 0 auto 0 auto;
+	}
+
+}
+
+@media (min-width: 961px) and (max-width: 1280px) {
+
+	h2{font-size: 20px;}
+	h4{display: none;}	
+
+	.banner_ordenar{
+		min-width: 401px;
+		width: 100%;
+		height: 200px;
+		background-image: url("/images/banner-ordenar.png")
+	}
+
+	.banner_ordenar img{
+		width: 100%;
+		height: 100%;
+	}	
+
+	.cintilla_pedidos{
+		min-width: 941px;			
+		width: 100%;
+		max-width: 1280px;			
+		height: 30px;
+		background-color: #b3b3b3;
+		padding: 5px 1px;
+		text-align: left;
+		margin: 5px auto 5px auto;
+		float: left;
+	}
+
+	.cintilla_pedidos img{
+	    float: right;
+	    margin: -24px 5px 10px 0;
+	    padding: 1px;
+	}
+
+	.mostrar_articulo_lasagna,
+	.mostrar_articulo_aderezo{
+		min-width: 941px;			
+		width: 100%;
+		max-width: 1280px;	
+		height: 170px;
+		padding: 0px;
+		padding-left: 5px;
+		margin: 10px auto 0 auto;
+		background-color: #FFF;
+		overflow: hidden;
+	}
+
+	.mostrar_articulo_lasagna .imagen,
+	.mostrar_articulo_aderezo .imagen{
+		width: 200px;
+		height: 150px;
+		padding: 10px 0 10px 0;
+		float: left;
+	}
+
+
+	.mostrar_articulo_lasagna img,
+	.mostrar_articulo_aderezo img,	{
+		width: 200px;
+		height: 150px;
+	}
+
+	.mostrar_articulo_lasagna .descripcion,
+	.mostrar_articulo_aderezo .descripcion,{
+		min-width: 150px;
+		max-width: 1000px;
+		height: 150px;
+		/*border: 1px solid #b3b3b3;*/
+		float: left;
+		padding: 0 10px;
+		font-size: 24px;
+		font-weight: 400;
+		color: #644547;
+		position: absolute;
+		margin-left: 200px;
+		margin-top: 20px;
+		overflow: hidden;
+	}
+
+	.mostrar_articulo_lasagna .descripcion h3,
+	.mostrar_articulo_aderezo .descripcion h3{  
+		margin-top: 1px;
+		font-size: 18px;
+		text-transform: capitalize;
+		color: #F19E74;
+		font-family: 'Open Sans', sans-serif;
+		font-weight: 700;
+		padding: 0px;
+		padding-top: 2px; 
+	}
+
+	.mostrar_articulo_lasagna .descripcion p,
+	.mostrar_articulo_aderezo .descripcion p{
+		margin-top: -7px;
+		font-size: 15px;
+		color: #644547;
+		font-family: 'Roboto Slab', sans-serif;
+		font-weight: 400;
+		line-height: 100%;
+	}
+
+	.mostrar_articulo_lasagna .cantidad,
+	.mostrar_articulo_aderezo .cantidad{
+		width: 60px;
+		height: 25px;
+		/*border: 1px solid #b3b3b3;*/
+		float: right;
+		padding: 10px;
+		margin-top: -5px;
+		margin-right: 10px;
+		font-size: 18px;
+		color: #644547;
+		font-family: 'Roboto Slab', sans-serif;
+		font-weight: 400;	
+		position: relative;
+	}
+
+	.mostrar_articulo_lasagna .cantidad input,
+	.mostrar_articulo_aderezo .cantidad input{
+		width: 100%;
+		height: 20px;
+		font-family: 'Open Sans', sans-serif;
+		font-weight: 400;
+		font-size: 18px;	
+		margin: 0 auto 0 auto;
+		border-radius: 5px;
+	}
+
+
+	/*---------- 				ensalada				------------------*/
+
+	#contenedor_ensalada{
+		min-width: 941px;
+		max-width: 1280px;
+		min-height: 350px;
+		margin: 0 auto 0 auto;
+
+	}
+
+	.mostrar_articulo_ensalada{
+		min-width: 300px;			
+		width: 300px;
+		max-width: 300px;	
+		height: 350px;
+		padding: 0px;
+		padding-left: 5px;
+		margin: 3px 3px;
+		background-color: #FFF;
+		overflow: hidden;
+		float: left;
+	}
+
+	.mostrar_articulo_ensalada .imagen{
+		width: 250px;
+		height: 200px;
+		padding: 10px 0 10px 0;
+		margin: 0 25px 0 25px;
+		float: left;
+	}
+
+	.mostrar_articulo_ensalada img	{
+		width: 250px;
+		height: 200px;
+	}
+
+	.mostrar_articulo_ensalada .descripcion{
+		min-width: 280px;
+		max-width: 280px;
+		height: 27%;
+		float: left;
+		padding: 0px 10px;
+		font-size: 20px;
+		font-weight: 400;
+		color: #644547;
+		position: relative;
+		margin-left: 0px;
+		margin-top: 0px;
+		overflow: hidden;
+	}
+
+	.mostrar_articulo_ensalada .descripcion h3{  
+		margin-top: 1px;
+		font-size: 18px;
+		text-transform: capitalize;
+		color: #F19E74;
+		font-family: 'Open Sans', sans-serif;
+		font-weight: 700;
+		padding: 0px;
+		padding-top: 0px; 
+	}
+
+	.mostrar_articulo_ensalada .descripcion p{
+		margin-top: -5px;
+		font-size: 15px;
+		color: #644547;
+		font-family: 'Roboto Slab', sans-serif;
+		font-weight: 400;
+		line-height: 100%;
+	}
+
+	.mostrar_articulo_ensalada .cantidad{
+		width: 280px;
+		height: 25px;
+		/*border: 1px solid #b3b3b3;*/
+		float: right;
+		padding: 5px 10px;
+		margin-top: 0px;
+		margin-right: 0px;
+		font-size: 18px;
+		color: #644547;
+		font-family: 'Roboto Slab', sans-serif;
+		font-weight: 400;	
+		position: relative;
+		text-align: right;
+	}
+
+	.mostrar_articulo_ensalada .cantidad h4{
+		text-align: right;
+		width: 180px;
+		display: block;
+		font-size: 15px;
+	}	
+
+	.mostrar_articulo_ensalada .cantidad input{
+		width: 30%;
+		height: 20px;
+		font-family: 'Open Sans', sans-serif;
+		font-weight: 400;
+		font-size: 18px;	
+		margin: 0 auto 0 auto;
+		top: -30px;
+		border-radius: 5px;
+		position: relative;
+	}
+
+	/*--                           listo                           --*/
+
+	.total{
+		min-height: 40px;
+	}
+
+	.mostrar_total,
+	.mostrar_total_programar{
+		min-width: 941px;			
+		width: 100%;
+		max-width: 1280px;			
 		height: 70px;
 		padding: 10px;
 		margin: 5px auto 20px auto;

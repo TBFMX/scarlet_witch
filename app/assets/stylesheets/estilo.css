@@ -112,7 +112,8 @@ body{background-color: #fff;}
 /* ------------ Footer -------------*/
 
 #footer{
-	width: 1400px;	
+	width: 100%;	
+	max-width: 1400px;
 	display: block;
 	color: #FFF;
 	background-color: #644547;
@@ -346,6 +347,141 @@ thead{	background-color: #a3a3a3;
 		margin: 0 auto 0 auto;	
 		overflow: hidden;
 	}
+
+	/* ------------ Contenido -------------*/
+
+	.contenedor_principal{
+		width: 100%;
+		min-height: 540px;
+		margin: 0 auto 0 auto;
+		border-top: 2px solid #EEDAC6;	
+	}
+
+}
+
+
+@media (min-width: 961px) and (max-width: 1280px) {
+
+	body{
+		margin: 0px;
+		padding: 0px;
+		background-color: #fff;
+	}
+
+
+	/* ------------ Banner -------------*/
+
+	#banner{
+		min-width: 961px;
+		max-width: 1280px;
+		display: block;
+		height: 90px;
+		margin: 0 auto 0 auto;	
+	}
+
+	#banner .logo{
+		width: 225px;
+		height: 90px;
+		float: left;
+	}
+
+	#banner .logo img{
+		margin: 30px 0 30px 10px;
+		padding-right:20px; 
+		border-right: 2px solid #EEDAC6;
+	}
+
+	#banner .slogan{
+		width: 665px;
+		height: 90px;
+		float: left;
+		padding-left: 20px;
+	} 
+
+	#banner .slogan p{
+		font-size: 17px;
+		margin-top:35px;
+		margin-left: 0px;
+		color: #644547;
+		font-family: 'Roboto Slab', serif;
+		font-weight: 700;	
+	}
+
+
+	#banner .cuenta{
+		width: 360px;
+		height: 45px;
+		text-align: right;
+		float: right;
+		right: 0px;
+		padding-right: 10px;
+		position: relative;
+
+	}
+
+	#banner #menu_principal{
+		min-width: 250px;		
+		width: 360px;
+		max-width: 100%;
+		height: 45px;
+		float: right;	
+		right: 0px;
+		padding-right: 10px;
+		position: relative;
+	}
+
+	#banner #menu_principal ul{
+		width: 360px;
+		height: 40px;
+		margin-top: 0px; 
+		list-style: none;
+		text-align: right;
+		margin-left: -50px;
+	}
+
+	#banner #menu_principal ul li{
+		float: left;
+		font-size: 15px;
+		font-family: 'Roboto Slab', serif;
+		font-weight: 400;	
+		color: #644547;	
+		text-align: center;
+		padding-right: 16px;
+	}
+
+	#banner #menu_principal ul li:hover{
+		font-family: 'Roboto Slab', serif;
+		font-weight: 700;	
+		color: #F19E74;	
+		border-top: 2px solid #EEDAC6;
+		text-align: center;	
+	}
+
+	#banner #menu_principal ul li a{
+		text-decoration: none;
+	}
+
+	#banner #menu_principal ul li a:hover{
+		text-decoration: none;
+		background-color: transparent;
+		color: #F19E74;		
+	}
+
+	/* ------------ Slider -------------*/
+
+	#slider{
+		min-width: 961px;
+		max-width: 1280px;
+		height: 300px;
+		display: block;
+		margin: 0 auto 0 auto;	
+		overflow: hidden;
+	}
+
+	#slider img{
+		width: 100%;
+		height: 100%;
+	}	
 
 	/* ------------ Contenido -------------*/
 

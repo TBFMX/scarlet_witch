@@ -3,7 +3,7 @@
 $(document).ready(function(){
 
   $("#lasagna").show();
-  $("#ensalada").hide();
+  $("#contenedor_ensalada").hide();
   $("#aderezo").hide();
 
   $("#hide_lasagna").click(function(){
@@ -13,10 +13,10 @@ $(document).ready(function(){
     $("#lasagna").show();
   });
   $("#hide_ensalada").click(function(){
-    $("#ensalada").hide();
+    $("#contenedor_ensalada").hide();
   });
   $("#show_ensalada").click(function(){
-    $("#ensalada").show();
+    $("#contenedor_ensalada").show();
   });
   $("#hide_aderezo").click(function(){
     $("#aderezo").hide();
@@ -59,7 +59,7 @@ $(document).ready(function(){
 
     <div id="lasagna"> 
       <% @lasagna.each do |las| %>
-        <div class="mostrar_articulos borde_generico">
+        <div class="mostrar_articulo_lasagna borde_generico">
           
           <div class="imagen">
             <img src="../../images/imagenplatillo.png">
@@ -84,21 +84,21 @@ $(document).ready(function(){
       <img id="hide_ensalada" src="../../images/less.jpg">
     </div>
 
-    <div id ="ensalada"> 
+  <div id ="contenedor_ensalada">
       <% @ensalada.each do |ens| %>
-        <div class="mostrar_articulos borde_generico">
+        <div class="mostrar_articulo_ensalada borde_generico">
           <div class="imagen">
             <img src="../../images/lasagna-002.jpg">
           </div>
 
         <div class="descripcion">
             <h3><%=  ens.title.to_s + ":" %></h3>
-            <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident"</p>            
-        </div>
-        
-        <div class="cantidad">
+            <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."</p>            
+         </div>
+          
+         <div class="cantidad">
           <h4>Cantidad:</h4>
-          <%= number_field_tag ens.title.to_s ,"", maxlength: 2, class: "articulos" %>
+           <%= number_field_tag ens.title.to_s ,"", maxlength: 2, class: "articulos" %>
         </div> 
         </div>
       <% end %>
@@ -112,7 +112,7 @@ $(document).ready(function(){
 
     <div id ="aderezo"> 
       <% @aderezo.each do |adec| %>
-        <div class="mostrar_articulos borde_generico">
+        <div class="mostrar_articulo_aderezo borde_generico">
 
           <div class="imagen">
             <img src="../../images/lasagna-003.jpg">
