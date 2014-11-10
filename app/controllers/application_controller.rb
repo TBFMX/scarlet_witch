@@ -113,6 +113,9 @@ class ApplicationController < ActionController::Base
   	def authorize
   		unless User.find_by(id: session[:user_id])
   			session[:lasurl]= request.original_url
+        puts "-------------------url-------------------"
+        puts session[:lasurl]
+        puts "--------------------------------------"
   			redirect_to login_path, notice: "Please log in"
   		end
  
