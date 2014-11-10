@@ -71,6 +71,7 @@ class OrdersController < ApplicationController
       @user_id = session[:user_id]
     else
       puts "hola"
+      session[:lasurl]= request.original_url
       redirect_to login_path
     end
 
