@@ -31,7 +31,7 @@ end
 
 ######################USUARIOS#####################################
 #User.create(username: 'admin', password: 'k4st3lJY!', email: 'admin@admin.com', rol_id: 1)
-@usuario1 = User.new(username: 'admin', name: 'Admin', lastname: 'EYM', password: 'k4st3lJY!', email: 'admin@admin.com', rol_id: @rol1.id)
+@usuario1 = User.new(username: 'admin', name: 'Admin', lastname: 'Lasagna', password: 'k4st3lJY!', email: 'admin@admin.com', rol_id: @rol1.id)
 @usuario1.save
 #User.create(username: 'demo', password: 'demo' ,  email: 'sebastian@tbf.mx', rol_id: 2)
 @usuario2 = User.new(username: 'demo', name: 'demo', lastname: 'demo', password: 'demo12' ,  email: 'sebastian@tbf.mx', rol_id: @rol2.id)

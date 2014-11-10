@@ -1,6 +1,6 @@
 class OrdersController < ApplicationController
   before_action :set_order, only: [:show, :edit, :update, :destroy, :envio]
-  skip_before_action :authorize, only: [:show, :new,:edit, :update, :destroy, :programar, :agregar_programa, :envio]
+  skip_before_action :authorize, only: [:show, :new,:edit, :update, :destroy, :programar, :agregar_programa, :create,:envio]
 
   # GET /orders
   # GET /orders.json
@@ -38,6 +38,7 @@ class OrdersController < ApplicationController
   # POST /orders
   # POST /orders.json
   def create
+    puts "<<<<<<<<<<<<<<<<<<<<<<primer hola>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>"
     #@lasagna = Articulo.where("tipo = 1")
     @articulo = Articulo.all
     params[:fecha_pedido] = Time.now
@@ -54,6 +55,7 @@ class OrdersController < ApplicationController
             end   
           end     
           redirect_to enviar_path(:id => @order), notice: 'Su orden a sido procesada'
+          puts "<<<<<<<<<<<<<<<<<<<<<<primer adios>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>"
         }
         format.json { render :show, status: :created, location: @order }
       else
@@ -64,9 +66,11 @@ class OrdersController < ApplicationController
   end
 
   def envio
+    puts "hola_de envio"
     unless session[:user_id].blank? 
       @user_id = session[:user_id]
     else
+      puts "hola"
       redirect_to login_path
     end
 
