@@ -1,19 +1,24 @@
-<%= form_tag("/envio_c") do %>
-	
-	<!-- 
-    calle = params[:calle]
-    colonia = params[:colonia]
-    ciudad = params[:ciudad]
-    estado = params[:estado] 
-    -->
-    <%= label_tag "calle" %> </br>
-    <%= text_field_tag "calle" %></br>
-    <%= label_tag "colonia" %></br>
-    <%= text_field_tag "colonia" %></br>
-    <%= label_tag "ciudad" %></br>
-    <%= text_field_tag "ciudad" %></br>
-    <%= label_tag "estado" %></br>
-    <%= text_field_tag "estado" %></br>
-    <%= hidden_field_tag "id", @order_id %>
-    <%= submit_tag %>
-<% end %>
+<div id="enviar_c" class="sombreado">
+    <%= form_tag("/envio_c") do %>
+    	<!-- 
+        calle = params[:calle]
+        colonia = params[:colonia]
+        ciudad = params[:ciudad]
+        estado = params[:estado] 
+        -->
+        <p>Calle:</p>
+            <%#= label_tag "calle" %>
+        <%= text_field_tag "calle" %>
+        <p>Colonia:</p>
+        <%#= label_tag "colonia" %>
+        <%= text_field_tag "colonia" %>
+        <p>Ciudad:</p>
+        <%#= label_tag "ciudad" %>
+        <%= text_field_tag "ciudad" %>
+        <p>Estado:</p>
+        <%#= label_tag "estado" %>
+        <%= text_field_tag "estado" %>
+        <%= hidden_field_tag "id", @order_id %>
+        <%= submit_tag(value = "Guardar Dirección", class: "boton_envio") %>
+    <% end %>
+</div>

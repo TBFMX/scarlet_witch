@@ -1,0 +1,45 @@
+// Place all the styles related to the Orders controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:800);
+@import url(http://fonts.googleapis.com/css?family=Roboto+Slab);
+
+//formulario de pago
+.formulario_pago{
+	min-width: 280px;
+	max-width: 320px;	
+	margin: 20px auto 20px auto;
+	padding: 10px;
+	border: 1px solid #A3A3A3;
+	background-color: #FFF;
+	text-transform: capitalize;
+}
+
+.formulario_pago p{
+	font-size: 15px;
+}
+
+.formulario_pago input,
+.formulario_pago select{
+	padding: 5px;
+}
+
+.formulario_pago .boton_pagar {
+	width: 80%;
+	max-width: 300px;
+	height: 40px;
+	font-size: 20px;
+	font-family: 'Open Sans', sans-serif;
+	background-color: #F19E74;
+	border-color: #F19E74;
+	margin: 0 40px 0 40px;
+}
+
+.cintilla_ticket_pago{
+	width: 330px;
+	height: 25px;
+	background-color: #b3b3b3;
+	margin: 0 -10px;
+	text-align: center;
+}

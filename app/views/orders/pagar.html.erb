@@ -16,6 +16,6 @@
         <p>Mes de Expiración: <%= number_field_tag "expire_month" %></p>
         <p>Año de Expiración: <%= number_field_tag "expire_year" %></p>
         <p>Clave: <%= text_field_tag "cvv2" %></p>
-        <%= submit_tag "Pagar"%>
+        <%= submit_tag(value = "Pagar", class: "boton_pagar")  %>
     <% end %>
 </div>

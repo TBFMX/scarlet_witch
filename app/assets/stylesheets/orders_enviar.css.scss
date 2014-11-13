@@ -1,0 +1,54 @@
+// Place all the styles related to the Orders controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:800);
+@import url(http://fonts.googleapis.com/css?family=Roboto+Slab);
+
+#enviar_c{
+	min-width: 320px;
+	max-width: 500px;
+	padding: 20px;
+	margin: 30px 0 0 0;
+	background-color: #FFF;
+	margin: 0 auto 0 auto;
+	text-align: center;
+}
+
+#enviar_c form{
+
+}
+
+#enviar_c form p{
+	min-width:250px;
+	width: 100%;
+	max-width: 80%;	
+	text-align: left;
+	font-size: 20px;
+	font-family: 'Open Sans', sans-serif;
+	background-color: #fff;
+}
+
+
+#enviar_c form input {
+	min-width:250px;
+	width: 100%;
+	max-width: 80%;
+	height: 30px;
+	font-size: 20px;
+	font-family: 'Open Sans', sans-serif;
+	background-color: #fff;
+	border-color: #a3a3a3;
+}
+
+#enviar_c form .boton_envio {
+	width: 80%;
+	max-width: 300px;
+	height: 40px;
+	font-size: 20px;
+	font-family: 'Open Sans', sans-serif;
+	background-color: #F19E74;
+	border-color: #F19E74;
+	margin: 30px auto 0 auto;
+}
+
